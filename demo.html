@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://www.google.com/jsapi"></script>
+	<script>
+		google.load('jquery','1.7.1');
+	</script>
+
+	<!-- CSS include start -->
+
+	<link rel="stylesheet" type="text/css" href="jquery.ez.menu.css">
+
+	<!-- CSS include end -->
+
+
+	<!-- Javascript insert start -->
+
+	<script src="jquery.ez.menu.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('#container')
+			.EZMenu('generate', [{"url":"http://google.com","name":"Google"},{"url":"http://bing.com","name":"Bing"},{"options":[{"url":"http://cpan.org","name":"CPAN"},{"url":"http://github.com","name":"Github"},{"url":"http://sourceforge.net","name":"SourceForge"}],"name":"Other"}]);
+	});
+	</script>
+
+	<!-- Javascript insert end -->
+
+
+	<!-- CSS overrides start -->
+
+	<link rel="stylesheet" type="text/css" href="http://mbrooks.info/demo.css">
+	<link rel="stylesheet" type="text/css" href="demo.css">
+
+	<!-- CSS overrides end -->
+
+
+	<title>EZ Menu</title>
+</head>
+<body>
+
+<p id="about">
+	This <strong>jQuery</strong> plugin is <a href="jquery.ez.menu.js" title="Only ? kb">lightweight</a>, easy to <a href="README.html#install" title="Installation">install</a> / <a href="demo.css" title="Stylesheet">customize</a>, and works on all modern web browsers.
+</p>
+
+
+<!-- HTML example start -->
+
+<div id="container"></div>
+
+<!-- HTML example end -->
+
+
+<!-- footer start -->
+
+<div id="footer">
+	<span class="copy">&#169; 2012 <a href="http://mbrooks.info">Marc S. Brooks</a></span>
+</div>
+
+<!-- footer end -->
+
+
+</body>
+</html>
