@@ -1,6 +1,6 @@
 /*
  *  EZ-Menu
- *  An easy way to create dynamic navigation menus
+ *  An easy way to create a navigation menu from JSON
  *
  *  Copyright 2012, Marc S. Brooks (http://mbrooks.info)
  *  Licensed under the MIT license:
