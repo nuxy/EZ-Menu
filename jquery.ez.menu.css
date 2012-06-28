@@ -28,7 +28,7 @@ ul.ez_menu {
 ul.ez_menu li{
 	float: left;
 	font-weight: bold;
-	padding: 6px 12px 6px 12px;
+	padding: 8px 12px 6px 12px;
 	position: relative;
 }
 
