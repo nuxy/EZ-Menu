@@ -53,6 +53,8 @@
 
 <p>It's as simple as defining the target element <code>#container</code> using the <a href="http://api.jquery.com/category/selectors">jQuery selector</a> and passing configuration data as JSON.</p>
 
+<pre>$(selector).EZMenu(<a href="#options"><em>options</em></a>, <em>config</em>);</pre>
+
 <h2>Source Code</h2>
 
 <p>Add the following Javascript between the <code>&lt;head&gt;&lt;/head&gt;</code> tags of your HTML document.</p>
@@ -68,7 +70,7 @@
 &lt;script src="/path/to/jquery.ez.menu.min.js"&gt;&lt;/script&gt;
 $(document).ready(function() {
 	$('#container')
-		.EZMenu('generate', [
+		.EZMenu({ click2open : true }, [
 			{ "name" : "Menu Link 1", "url" : "http://domain1.com" },
 			{ "name" : "Menu Link 2", "url" : "http://domain2.com" },
 			{ "name" : "Menu List A", "options" : [
@@ -82,6 +84,42 @@ $(document).ready(function() {
 		]);
 });
 &lt;/script&gt;</pre>
+
+<h2>Plug-in Settings</h2>
+
+<p>The following options can be passed to the plug-in main function as JSON</p>
+
+<a name="options"></a>
+
+<table border="1">
+	<tr>
+		<th>Option</th>
+		<th>Description</th>
+		<th>Default Value</th>
+	</tr>
+	<tr>
+		<td>showEasing</td>
+		<td>animation to be used when opening sub-menus content</td>
+		<td>linear</td>
+	</tr>
+	<tr>
+		<td>hideEasing</td>
+		<td>animation to be used when opening sub-menus content</td>
+		<td>linear</td>
+	</tr>
+	<tr>
+		<td>showSpeed</td>
+		<td>speed of the sub-menu animation in milliseconds</td>
+		<td>600</td>
+	</tr>
+	<tr>
+		<td>hideSpeed</td>
+		<td>speed of the sub-menu animation in milliseconds</td>
+		<td>600</td>
+	</tr>
+</table>
+
+<p>Click <a href="http://jqueryui.com/demos/effect/easing.html">here</a> for more information about the available jQuery UI Easing effects.</p>
 
 <h2>Releases</h2>
 
