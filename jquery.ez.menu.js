@@ -177,7 +177,7 @@
 				event.data.css({ display : 'none' });
 
 				$(this)
-					.removeClass('submenu_hover_on').addClass('submenu_hover_off')
+					.removeClass('submenu_hover_on')
 					.attr('active', null);
 			}
 		});
