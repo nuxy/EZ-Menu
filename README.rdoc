@@ -1,6 +1,6 @@
 = EZ Menu
 
-Create a HTML navigation menu from JSON with ease.
+Create a HTML navigation menu and sub-menus from JSON with ease.
 
 http://github.com/nuxy/EZ-Menu/raw/master/preview.jpg
 
@@ -10,11 +10,12 @@ http://github.com/nuxy/EZ-Menu/raw/master/preview.jpg
 - Compatible with Firefox 3.6+, Chrome, Safari 5+, Opera, and Internet Explorer 7+ web browsers.
 - Compatible with iOS and Android mobile web browsers.
 - Easy to set-up and customize.
-- Fast and lightweight (jQuery plug-in *only 3 kB)
+- Supports unlimited nested sub-menus.
+- Fast and lightweight (jQuery plug-in *only 3.7 kB)
 
 == Installation
 
-Please refer to the {README.html}[http://labs.mbrooks.info/demos/EZ-Menu] file for more information about this package.
+Download the latest {sources}[https://github.com/nuxy/EZ-Menu/downloads] and refer to the {README}[http://labs.mbrooks.info/demos/EZ-Menu/README.html] for more information about this package.
 
 == Author
 
