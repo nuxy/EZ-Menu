@@ -11,7 +11,7 @@ http://github.com/nuxy/EZ-Menu/raw/master/preview.jpg
 - Compatible with iOS and Android mobile web browsers.
 - Easy to set-up and customize.
 - Supports unlimited nested sub-menus.
-- Fast and lightweight (jQuery plug-in *only 3.7 kB)
+- Fast and lightweight (jQuery plug-in *only 4 kB)
 
 == Installation
 
