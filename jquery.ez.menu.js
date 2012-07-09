@@ -57,20 +57,20 @@
 
 					// highlight the selected option
 					if (href.pathname == menu.url || curr == menu.url) {
-						item.addClass('menu_hover1_on')
+						item.addClass('menu_hover_on')
 							.attr('target', true);
 					}
 
 					// attach highlight events
 					item.mouseover(function() {
 						if (!$(this).attr('active') && !$(this).attr('target')) {
-							$(this).removeClass('menu_hover1_off').addClass('menu_hover1_on');
+							$(this).removeClass('menu_hover_off').addClass('menu_hover_on');
 						}
 					});
 
 					item.mouseout(function() {
 						if (!$(this).attr('active') && !$(this).attr('target')) {
-							$(this).removeClass('menu_hover1_on').addClass('menu_hover1_off');
+							$(this).removeClass('menu_hover_on');
 						}
 					});
 
@@ -89,23 +89,7 @@
 						var opts = createMenuOpts(menu.options);
 						item.append(opts);
 
-						// attach hide/unhide events
-						item.bind('click', opts, function(event) {
-							if (!$(this).attr('active')) {
-								event.data.css({ display : 'block' });
-
-								$(this)
-									.removeClass('menu_hover2_off').addClass('menu_hover2_on')
-									.attr('active', true);
-							}
-							else {
-								event.data.css({ display : 'none' });
-
-								$(this)
-									.removeClass('menu_hover2_on').addClass('menu_hover2_off')
-									.attr('active', null);
-							}
-						});
+						bindMenuEvents(item, opts);
 					}
 
 					item.append(link);
@@ -158,10 +142,44 @@
 				link.attr('href', menu.url);
 			}
 
+			// create the submenu
+			if (menu.options) {
+				var opts = createMenuOpts(menu.options);
+				item
+					.addClass('submenu')
+					.append(opts);
+
+				bindMenuEvents(item, opts);
+			}
+
 			item.append(link);
 			list.append(item);
 		}
 
 		return list;
+	}
+
+	/*
+	 * Attach hide/unhide events
+	 */
+	function bindMenuEvents(item, opts) {
+		item.bind('click', opts, function(event) {
+			event.stopPropagation();
+
+			if (!$(this).attr('active')) {
+				event.data.css({ display : 'block' });
+
+				$(this)
+					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
+					.attr('active', true);
+			}
+			else {
+				event.data.css({ display : 'none' });
+
+				$(this)
+					.removeClass('submenu_hover_on').addClass('submenu_hover_off')
+					.attr('active', null);
+			}
+		});
 	}
 })(jQuery);
