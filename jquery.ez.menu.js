@@ -15,7 +15,10 @@
 		init : function(options, config) {
 
 			// default options
-			var settings = $.extend({}, options);
+			var settings = $.extend({
+				animateMenu : false,
+				click2open  : false
+			}, options);
 
 			return this.each(function() {
 				var $this = $(this),
@@ -23,7 +26,8 @@
 
 				if ( $.isEmptyObject(data) ) {
 					$this.data({
-						options : settings
+						container : $this,
+						options   : settings
 					});
 				}
 
@@ -42,61 +46,10 @@
 				var $this = $(this),
 					data  = $this.data();
 
-				var list = $('<ul></ul>')
-					.addClass('ez_menu');
+				data.container
+					= (data.container) ? data.container : $this;
 
-				for (var i = 0; i < config.length; i++) {
-					var menu = config[i];
-
-					var item = $('<li></li>');
-					var link = $('<a></a>')
-						.append(menu.name);
-
-					var href = window.location;
-					var curr = href.protocol + '//' + href.host + href.pathname;
-
-					// highlight the selected option
-					if (href.pathname == menu.url || curr == menu.url) {
-						item.addClass('menu_hover_on')
-							.attr('target', true);
-					}
-
-					// attach highlight events
-					item.mouseover(function() {
-						if (!$(this).attr('active') && !$(this).attr('target')) {
-							$(this).removeClass('menu_hover_off').addClass('menu_hover_on');
-						}
-					});
-
-					item.mouseout(function() {
-						if (!$(this).attr('active') && !$(this).attr('target')) {
-							$(this).removeClass('menu_hover_on');
-						}
-					});
-
-					// attach redirect event
-					if (menu.url) {
-						item.bind('click', menu.url, function(event) {
-							window.location.href = event.data;
-						});
-
-						link.attr('href', menu.url);
-					}
-					else
-
-					// create the submenu
-					if (menu.options) {
-						var opts = createMenuOpts(menu.options);
-						item.append(opts);
-
-						bindMenuEvents(item, opts);
-					}
-
-					item.append(link);
-					list.append(item);
-				}
-
-				$(this).append(list);
+				createNavMenu( $.extend(config, data) );
 			});
 		}
 	};
@@ -115,14 +68,79 @@
 	};
 
 	/*
+	 * Create the navigation menu elements
+	 */
+	function createNavMenu(data) {
+		var list = $('<ul></ul>')
+			.addClass('ez_menu');
+
+		for (var i = 0; i < data.length; i++) {
+			var menu = data[i];
+
+			var item = $('<li></li>');
+			var link = $('<a></a>')
+				.append(menu.name);
+
+			var href = window.location;
+			var curr = href.protocol + '//' + href.host + href.pathname;
+
+			// highlight the selected option
+			if (href.pathname == menu.url || curr == menu.url) {
+				item.addClass('menu_hover_on')
+					.attr('target', true);
+			}
+
+			// attach highlight events
+			item.mouseover(function() {
+				var $this = $(this);
+
+				if (!$this.attr('active') && !$this.attr('target')) {
+					$this.removeClass('menu_hover_off').addClass('menu_hover_on');
+				}
+			});
+
+			item.mouseout(function() {
+				var $this = $(this);
+
+				if (!$this.attr('active') && !$this.attr('target')) {
+					$this.removeClass('menu_hover_on');
+				}
+			});
+
+			// attach redirect event
+			if (menu.url) {
+				item.bind('click', menu.url, function(event) {
+					window.location.href = event.data;
+				});
+
+				link.attr('href', menu.url);
+			}
+			else
+
+			// create the sub-menu
+			if (menu.options) {
+				var opts = createMenuOpts(menu.options);
+				item.append(opts);
+
+				bindMenuEvents(data, item, opts);
+			}
+
+			item.append(link);
+			list.append(item);
+		}
+
+		data.container.append(list);
+	}
+
+	/*
 	 * Create the menu option elements
 	 */
-	function createMenuOpts(config) {
+	function createMenuOpts(data) {
 		var list = $('<ul></ul>')
 			.addClass('menu_list');
 
-		for (var i = 0; i < config.length; i++) {
-			var menu = config[i];
+		for (var i = 0; i < data.length; i++) {
+			var menu = data[i];
 
 			var item = $('<li></li>');
 			var link = $('<a></a>')
@@ -142,14 +160,14 @@
 				link.attr('href', menu.url);
 			}
 
-			// create the submenu
+			// create the sub-menu
 			if (menu.options) {
 				var opts = createMenuOpts(menu.options);
 				item
 					.addClass('submenu')
 					.append(opts);
 
-				bindMenuEvents(item, opts);
+				bindMenuEvents(data, item, opts);
 			}
 
 			item.append(link);
@@ -162,23 +180,41 @@
 	/*
 	 * Attach hide/unhide events
 	 */
-	function bindMenuEvents(item, opts) {
-		item.bind('click', opts, function(event) {
+	function bindMenuEvents(data, item, opts) {
+		var type = (!data.click2open) ? 'click' : 'hover';
+
+		var action;
+
+		item.bind(type, opts, function(event) {
 			event.stopPropagation();
 
-			if (!$(this).attr('active')) {
-				event.data.css({ display : 'block' });
+			if (action) { return }
 
-				$(this)
-					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
-					.attr('active', true);
+			var $this = $(this);
+
+			action = true;
+
+			if ($this.attr('active')) {
+
+				// .. hide menu
+				event.data.hide('slow', function() {
+					$this
+						.removeClass('menu_hover_on submenu_hover_on')
+						.attr('active', null);
+
+					action = null;
+				});
 			}
 			else {
-				event.data.css({ display : 'none' });
 
-				$(this)
-					.removeClass('submenu_hover_on')
-					.attr('active', null);
+				// .. show menu
+				$this
+					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
+					.attr('active', true);
+
+				event.data.show('slow', function() {
+					action = null;
+				});
 			}
 		});
 	}
