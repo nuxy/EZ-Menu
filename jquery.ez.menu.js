@@ -196,7 +196,7 @@
 
 			if ($this.attr('active')) {
 
-				// .. hide menu
+				// hide menu
 				event.data.hide('slow', function() {
 					$this
 						.removeClass('menu_hover_on submenu_hover_on')
@@ -204,10 +204,13 @@
 
 					action = null;
 				});
+
+				// .. sub-menus
+				$this.find('.submenu').trigger('click');
 			}
 			else {
 
-				// .. show menu
+				// show menu
 				$this
 					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
 					.attr('active', true);
