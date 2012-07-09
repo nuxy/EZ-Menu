@@ -91,7 +91,7 @@
 			item.mouseover(function() {
 				var $this = $(this);
 
-				if (!$this.attr('active') && !$this.attr('target')) {
+				if (!$this.attr('visible') && !$this.attr('target')) {
 					$this.removeClass('menu_hover_off').addClass('menu_hover_on');
 				}
 			});
@@ -99,7 +99,7 @@
 			item.mouseout(function() {
 				var $this = $(this);
 
-				if (!$this.attr('active') && !$this.attr('target')) {
+				if (!$this.attr('visible') && !$this.attr('target')) {
 					$this.removeClass('menu_hover_on');
 				}
 			});
@@ -189,26 +189,25 @@
 
 			action = true;
 
-			if ($this.attr('active')) {
+			if ($this.attr('visible')) {
 
-				// hide menu
+				// hide menu sub-menus
+				$this.find('.submenu').trigger('click');
+
 				event.data.hide(data.options.hideSpeed, data.options.hideEasing, function() {
 					$this
 						.removeClass('menu_hover_on submenu_hover_on')
-						.attr('active', null);
+						.attr('visible', null);
 
 					action = null;
 				});
-
-				// .. sub-menus
-				$this.find('.submenu').trigger('click');
 			}
 			else {
 
 				// show menu
 				$this
 					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
-					.attr('active', true);
+					.attr('visible', true);
 
 				event.data.show(data.options.showSpeed, data.options.showEasing, function() {
 					action = null;
