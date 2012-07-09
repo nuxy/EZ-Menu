@@ -15,10 +15,20 @@
 		init : function(options, config) {
 
 			// default options
-			var settings = $.extend({
-				animateMenu : false,
-				click2open  : false
-			}, options);
+			var settings = {
+				showEasing : 'linear',
+				hideEasing : 'linear',
+				showSpeed  : 'slow',
+				hideSpeed  : 'slow',
+				click2open : false
+			};
+
+			if (arguments.length > 1) {
+				$.extend(settings, options);
+			}
+			else {
+				config = options;
+			}
 
 			return this.each(function() {
 				var $this = $(this),
@@ -26,30 +36,17 @@
 
 				if ( $.isEmptyObject(data) ) {
 					$this.data({
-						container : $this,
-						options   : settings
+						options : settings
 					});
 				}
 
-				$this.EZMenu('generate', config);
+				$this.append( createNavMenu(data, config) );
 			});
 		},
 
 		destroy : function() {
 			return this.each(function() {
 				$(this).removeData();
-			});
-		},
-
-		generate : function(config) {
-			return this.each(function() {
-				var $this = $(this),
-					data  = $this.data();
-
-				data.container
-					= (data.container) ? data.container : $this;
-
-				createNavMenu( $.extend(config, data) );
 			});
 		}
 	};
@@ -70,12 +67,12 @@
 	/*
 	 * Create the navigation menu elements
 	 */
-	function createNavMenu(data) {
+	function createNavMenu(data, config) {
 		var list = $('<ul></ul>')
 			.addClass('ez_menu');
 
-		for (var i = 0; i < data.length; i++) {
-			var menu = data[i];
+		for (var i = 0; i < config.length; i++) {
+			var menu = config[i];
 
 			var item = $('<li></li>');
 			var link = $('<a></a>')
@@ -119,7 +116,7 @@
 
 			// create the sub-menu
 			if (menu.options) {
-				var opts = createMenuOpts(menu.options);
+				var opts = createMenuOpts(data, menu.options);
 				item.append(opts);
 
 				bindMenuEvents(data, item, opts);
@@ -129,18 +126,18 @@
 			list.append(item);
 		}
 
-		data.container.append(list);
+		return list;
 	}
 
 	/*
 	 * Create the menu option elements
 	 */
-	function createMenuOpts(data) {
+	function createMenuOpts(data, config) {
 		var list = $('<ul></ul>')
 			.addClass('menu_list');
 
-		for (var i = 0; i < data.length; i++) {
-			var menu = data[i];
+		for (var i = 0; i < config.length; i++) {
+			var menu = config[i];
 
 			var item = $('<li></li>');
 			var link = $('<a></a>')
@@ -162,7 +159,7 @@
 
 			// create the sub-menu
 			if (menu.options) {
-				var opts = createMenuOpts(menu.options);
+				var opts = createMenuOpts(data, menu.options);
 				item
 					.addClass('submenu')
 					.append(opts);
@@ -181,11 +178,9 @@
 	 * Attach hide/unhide events
 	 */
 	function bindMenuEvents(data, item, opts) {
-		var type = (!data.click2open) ? 'click' : 'hover';
-
 		var action;
 
-		item.bind(type, opts, function(event) {
+		item.bind( ( (!data.options.click2open) ? 'click' : 'hover'), opts, function(event) {
 			event.stopPropagation();
 
 			if (action) { return }
@@ -197,7 +192,7 @@
 			if ($this.attr('active')) {
 
 				// hide menu
-				event.data.hide('slow', function() {
+				event.data.hide(data.options.hideSpeed, data.options.hideEasing, function() {
 					$this
 						.removeClass('menu_hover_on submenu_hover_on')
 						.attr('active', null);
@@ -215,7 +210,7 @@
 					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
 					.attr('active', true);
 
-				event.data.show('slow', function() {
+				event.data.show(data.options.showSpeed, data.options.showEasing, function() {
 					action = null;
 				});
 			}
