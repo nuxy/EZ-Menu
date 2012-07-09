@@ -19,7 +19,19 @@
 	<script>
 	$(document).ready(function() {
 		$('#container')
-			.EZMenu('generate', [{"url":"http://google.com","name":"Google"},{"url":"http://bing.com","name":"Bing"},{"options":[{"url":"http://cpan.org","name":"CPAN"},{"url":"http://github.com","name":"Github"},{"url":"http://sourceforge.net","name":"SourceForge"}],"name":"Other"}]);
+			.EZMenu('generate', [
+				{ "name" : "Google", "url" : "http://google.com" },
+				{ "name" : "Bing",   "url" : "http://bing.com" },
+				{ "name" : "Other", "options" : [
+					{ "name" : "CPAN", "url" : "http://cpan.org" },
+					{ "name" : "Github", "url" : "http://github.com" },
+					{ "name" : "Sourceforge", "url" : "http://sourceforge.net" },
+					{ "name" : "More", "options" : [
+						{ "name" : "Ars Technica", "url" : "http://arstechnica.com" },
+						{ "name" : "Slashdot", "url" : "http://slashdot.org" }
+					]}
+				]}
+			]);
 	});
 	</script>
 
@@ -39,7 +51,7 @@
 <body>
 
 <p id="about">
-	This <strong>jQuery</strong> plugin is <a href="jquery.ez.menu.min.js" title="Only 2 kb">lightweight</a>, easy to <a href="README.html#install" title="Installation">install</a> / <a href="demo.css" title="Stylesheet">customize</a>, and works on all modern web browsers.
+	This <strong>jQuery</strong> plugin is <a href="jquery.ez.menu.min.js" title="Only 2.1 kb">lightweight</a>, easy to <a href="README.html#install" title="Installation">install</a> / <a href="demo.css" title="Stylesheet">customize</a>, and works on all modern web browsers.
 </p>
 
 
