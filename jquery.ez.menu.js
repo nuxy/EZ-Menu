@@ -183,10 +183,9 @@
 		item.bind( ( (!data.options.click2open) ? 'click' : 'hover'), opts, function(event) {
 			event.stopPropagation();
 
-			if (action) { return }
-
 			var $this = $(this);
 
+			if (action) { return }
 			action = true;
 
 			if ($this.attr('visible')) {
