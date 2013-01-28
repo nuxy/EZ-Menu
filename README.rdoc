@@ -15,7 +15,7 @@ http://github.com/nuxy/EZ-Menu/raw/master/preview.jpg
 
 == Installation
 
-Download the latest {sources}[https://github.com/nuxy/EZ-Menu/downloads] and refer to the {README}[http://labs.mbrooks.info/demos/EZ-Menu/README.html] for more information about this package.
+Download the latest {sources}[https://github.com/nuxy/EZ-Menu/tags] and refer to the {README}[http://labs.mbrooks.info/demos/EZ-Menu/README.html] for more information about this package.
 
 == Author
 
