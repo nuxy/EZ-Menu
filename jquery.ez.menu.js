@@ -2,7 +2,7 @@
  *  EZ-Menu
  *  An easy way to create a navigation menu from JSON
  *
- *  Copyright 2012, Marc S. Brooks (http://mbrooks.info)
+ *  Copyright 2012-2013, Marc S. Brooks (http://mbrooks.info)
  *  Licensed under the MIT license:
  *  http://www.opensource.org/licenses/mit-license.php
  *
@@ -12,7 +12,7 @@
 
 (function($) {
 	var methods = {
-		init : function(options, config) {
+		"init" : function(options, config) {
 
 			// default options
 			var settings = {
@@ -44,7 +44,7 @@
 			});
 		},
 
-		destroy : function() {
+		"destroy" : function() {
 			return this.each(function() {
 				$(this).removeData();
 			});
@@ -53,10 +53,10 @@
 
 	$.fn.EZMenu = function(method) {
 		if (methods[method]) {
-			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1) );
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
 		}
 		else
-		if (typeof method === 'object' || ! method) {
+		if (typeof method === 'object' || !method) {
 			return methods.init.apply(this, arguments);
 		}
 		else {
@@ -78,8 +78,8 @@
 			var link = $('<a></a>')
 				.append(menu.name);
 
-			var href = window.location;
-			var curr = href.protocol + '//' + href.host + href.pathname;
+			var href = window.location,
+				curr = href.protocol + '//' + href.host + href.pathname;
 
 			// highlight the selected option
 			if (href.pathname == menu.url || curr == menu.url) {
