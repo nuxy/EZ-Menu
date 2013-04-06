@@ -70,7 +70,7 @@
 &lt;script src="/path/to/jquery.ez.menu.min.js"&gt;&lt;/script&gt;
 $(document).ready(function() {
 	$('#container')
-		.EZMenu({ click2open : true }, [
+		.EZMenu([
 			{ "name" : "Menu Link 1", "url" : "http://domain1.com" },
 			{ "name" : "Menu Link 2", "url" : "http://domain2.com" },
 			{ "name" : "Menu List A", "options" : [
@@ -116,6 +116,11 @@ $(document).ready(function() {
 		<td>hideSpeed</td>
 		<td>speed of the sub-menu animation in milliseconds</td>
 		<td>600</td>
+	</tr>
+	<tr>
+		<td>click2open</td>
+		<td>open submenus on clickable event (default hover)</td>
+		<td>false</td>
 	</tr>
 </table>
 

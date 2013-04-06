@@ -180,7 +180,7 @@
 	function bindMenuEvents(data, item, opts) {
 		var action;
 
-		item.bind( ( (!data.options.click2open) ? 'click' : 'hover'), opts, function(event) {
+		item.bind( ( (data.options.click2open) ? 'click' : 'hover'), opts, function(event) {
 			event.stopPropagation();
 
 			var $this = $(this);
