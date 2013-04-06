@@ -3,7 +3,6 @@
 #container ul.ez_menu {
 	margin: 10% auto 0px auto;
 	width: 800px;
-	top: 100px;
 }
 
 #container ul.ez_menu {
@@ -26,6 +25,10 @@ ul.ez_menu li a {
 	text-decoration: none;
 }
 
+ul.ez_menu li:nth-child(3) a {
+	color: #FFFFFF;
+}
+
 ul.ez_menu li.menu_hover_on {
 	background-color: #EEEEEE;
 }
@@ -40,6 +43,7 @@ ul.ez_menu li.menu_hover_off {
 
 ul.ez_menu li.submenu_hover_on {
 	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center;
+	padding-right: 20px;
 }
 
 ul.ez_menu li.submenu_hover_on a {
@@ -48,13 +52,13 @@ ul.ez_menu li.submenu_hover_on a {
 
 ul.ez_menu li.submenu_hover_off {
 	background: #DDDDDD none;
+	padding-right: 6px;
 }
 
 ul.ez_menu ul.menu_list {
 	background-color: #FFFFFF;
 	border: 1px solid #DDDDDD;
 	border-top: none;
-	width: 150px;
 }
 
 ul.ez_menu ul.menu_list li {
