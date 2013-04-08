@@ -7,7 +7,6 @@
  *  http://www.opensource.org/licenses/mit-license.php
  *
  *  Dependencies:
- *    jquery.js
  */
 
 (function($) {
@@ -178,39 +177,34 @@
 	 * Attach hide/unhide events
 	 */
 	function bindMenuEvents(data, item, opts) {
-		var action;
+		var action = (data.options.click2open) ? 'click' : 'hover',
+			active = null;
 
-		item.bind( ( (data.options.click2open) ? 'click' : 'hover'), opts, function(event) {
-			event.stopPropagation();
-
+		item.bind(action, opts, function(event) {
 			var $this = $(this);
 
-			if (action) { return }
-			action = true;
-
+			// hide menu sub-menus
 			if ($this.attr('visible')) {
-
-				// hide menu sub-menus
-				$this.find('.submenu').trigger('click');
-
 				event.data.hide(data.options.hideSpeed, data.options.hideEasing, function() {
 					$this
 						.removeClass('menu_hover_on submenu_hover_on')
-						.attr('visible', null);
+						.removeAttr('visible');
 
-					action = null;
+					active = null;
 				});
 			}
-			else {
 
-				// show menu
+			// show select menu items
+			else {
+				if (active) return;
+
 				$this
 					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
 					.attr('visible', true);
 
-				event.data.show(data.options.showSpeed, data.options.showEasing, function() {
-					action = null;
-				});
+				event.data.show(data.options.showSpeed, data.options.showEasing);
+
+				active = true;
 			}
 		});
 	}
