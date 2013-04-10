@@ -177,35 +177,61 @@
 	 * Attach hide/unhide events
 	 */
 	function bindMenuEvents(data, item, opts) {
-		var action = (data.options.click2open) ? 'click' : 'hover',
-			active = null;
+		var action = (data.options.click2open) ? 'click' : 'mouseenter',
+			active = null,
+			opened = null;
 
 		item.bind(action, opts, function(event) {
+			event.stopPropagation();
+
 			var $this = $(this);
 
 			// hide menu sub-menus
 			if ($this.attr('visible')) {
+				if (!active || !opened) return;
+
 				event.data.hide(data.options.hideSpeed, data.options.hideEasing, function() {
 					$this
 						.removeClass('menu_hover_on submenu_hover_on')
 						.removeAttr('visible');
 
 					active = null;
+					opened = null;
 				});
 			}
 
 			// show select menu items
 			else {
-				if (active) return;
+				if (active || opened) return;
 
 				$this
 					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
 					.attr('visible', true);
 
-				event.data.show(data.options.showSpeed, data.options.showEasing);
+				event.data.show(data.options.showSpeed, data.options.showEasing, function() {
+					opened = true;
+				});
 
 				active = true;
 			}
+		});
+
+		if (action != 'mouseenter') return;
+
+		item.bind('mouseleave', opts, function() {
+			if (!active && !opened) return;
+
+			// close all submenus
+			item.each(function() {
+				var elm = $(this);
+
+				var events = $._data(elm[0], 'events');
+				if (events) {
+					opened = true;
+
+					elm.trigger('mouseenter');
+				}
+			});
 		});
 	}
 })(jQuery);
