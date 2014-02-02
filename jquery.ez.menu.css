@@ -25,10 +25,10 @@ ul.ez_menu {
 	width: 100%;
 }
 
-ul.ez_menu li{
+ul.ez_menu li {
 	float: left;
 	font-weight: bold;
-	padding: 8px 12px 6px 12px;
+	padding: 8px 20px 6px 12px;
 	position: relative;
 	z-index: 10;
 }
@@ -99,6 +99,10 @@ ul.ez_menu ul.menu_list li a:hover {
 
 ul.ez_menu ul.menu_list li.submenu {
 	border-top: 1px dashed #DDDDDD;
+}
+
+ul.ez_menu ul.menu_list li.submenu:first-child {
+	border: none;
 }
 
 ul.ez_menu ul.menu_list li.submenu ul {
