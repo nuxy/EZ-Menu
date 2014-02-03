@@ -8,29 +8,31 @@
 
 	<!-- CSS include start -->
 
-	<link rel="stylesheet" type="text/css" href="jquery.ez.menu.min.css">
+	<link rel="stylesheet" type="text/css" href="jquery.ez.menu.css">
 
 	<!-- CSS include end -->
 
 
 	<!-- Javascript insert start -->
 
-	<script src="jquery.ez.menu.min.js"></script>
+	<script src="jquery.ez.menu.js"></script>
 	<script>
 	$(document).ready(function() {
 		$('#container')
 			.EZMenu([
-				{ "name" : "Google", "url" : "http://google.com" },
-				{ "name" : "Bing", "url" : "http://bing.com" },
-				{ "name" : "Other", "options" : [
-					{ "name" : "CPAN", "url" : "http://cpan.org" },
-					{ "name" : "Github", "url" : "http://github.com" },
-					{ "name" : "Sourceforge", "url" : "http://sourceforge.net" },
-					{ "name" : "More", "options" : [
-						{ "name" : "Ars Technica", "url" : "http://arstechnica.com" },
-						{ "name" : "Slashdot", "url" : "http://slashdot.org" }
-					]}
-				]}
+            { "name" : "API", "options" : [
+                { "name" : "Content", "url" : "content", "options" : [
+                    { "name" : "Forms", "url" : "forms" }
+                ]},
+                { "name" : "Routes",  "url" : "routes" }
+            ]},
+            { "name" : "Users", "url" : "users", "options" : [
+                { "name" : "Roles", "url" : "roles" }
+            ]},
+            { "name" : "System", "options" : [
+                { "name" : "Look Profiler", "url" : "system"  },
+                { "name" : "Restart",  "url" : "restart" }
+            ]}
 			]);
 	});
 	</script>
@@ -65,7 +67,7 @@
 <!-- footer start -->
 
 <div id="footer">
-	<span class="copy">&#169; 2012-2013 <a href="http://mbrooks.info">Marc S. Brooks</a></span>
+	<span class="copy">&#169; 2012-2014 <a href="http://mbrooks.info">Marc S. Brooks</a></span>
 </div>
 
 <!-- footer end -->
