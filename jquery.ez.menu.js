@@ -17,8 +17,8 @@
 			var settings = {
 				showEasing : 'linear',
 				hideEasing : 'linear',
-				showSpeed  : 'slow',
-				hideSpeed  : 'slow',
+				showSpeed  : 'fast',
+				hideSpeed  : 'fast',
 				click2open : false
 			};
 
