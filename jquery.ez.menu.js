@@ -7,6 +7,7 @@
  *  http://www.opensource.org/licenses/mit-license.php
  *
  *  Dependencies:
+ *    jquery.js
  */
 
 (function($) {
@@ -73,8 +74,8 @@
 		for (var i = 0; i < config.length; i++) {
 			var menu = config[i];
 
-			var item = $('<li></li>');
-			var link = $('<a></a>')
+			var item = $('<li></li>'),
+				link = $('<a></a>')
 				.append(menu.name);
 
 			var href = window.location,
@@ -84,6 +85,9 @@
 			if (href.pathname == menu.url || curr == menu.url) {
 				item.addClass('menu_hover_on')
 					.attr('target', true);
+			}
+			else {
+				item.addClass('menu_hover_off');
 			}
 
 			// attach highlight events
@@ -99,7 +103,7 @@
 				var $this = $(this);
 
 				if (!$this.attr('visible') && !$this.attr('target')) {
-					$this.removeClass('menu_hover_on');
+					$this.removeClass('menu_hover_on').addClass('menu_hover_off');
 				}
 			});
 
@@ -138,30 +142,19 @@
 		for (var i = 0; i < config.length; i++) {
 			var menu = config[i];
 
-			var item = $('<li></li>');
-			var link = $('<a></a>')
+			var item = $('<li></li>'),
+				link = $('<a></a>')
 				.append(menu.name);
 
 			if (menu.url) {
-
-				// attach highlight events
-				item.bind('mouseover', link, function(event) {
-					event.data.removeClass('opt_hover_off').addClass('opt_hover_on');
-				});
-
-				item.bind('mouseout', link, function(event) {
-					event.data.removeClass('opt_hover_on').addClass('opt_hover_off');
-				});
-
 				link.attr('href', menu.url);
 			}
 
 			// create the sub-menu
 			if (menu.options) {
 				var opts = createMenuOpts(data, menu.options);
-				item
-					.addClass('submenu')
-					.append(opts);
+
+				item.addClass('submenu').append(opts);
 
 				bindMenuEvents(data, item, opts);
 			}
@@ -191,8 +184,7 @@
 				if (!active || !opened) return;
 
 				event.data.hide(data.options.hideSpeed, data.options.hideEasing, function() {
-					$this
-						.removeClass('menu_hover_on submenu_hover_on')
+					$this.removeClass('submenu_hover_on').addClass('submenu_hover_off')
 						.removeAttr('visible');
 
 					active = null;
@@ -204,8 +196,7 @@
 			else {
 				if (active || opened) return;
 
-				$this
-					.removeClass('submenu_hover_off').addClass('submenu_hover_on')
+				$this.removeClass('submenu_hover_off').addClass('submenu_hover_on')
 					.attr('visible', true);
 
 				event.data.show(data.options.showSpeed, data.options.showEasing, function() {
