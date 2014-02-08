@@ -12,10 +12,9 @@
 
 ul.ez_menu {
 	background-color: #DDDDDD;
-	border: 1px solid #FFFFFF;
-	border-bottom: 1px solid #CCCCCC;
+	border: 1px solid #DDDDDD;
 	cursor: pointer;
-	height: 31px;
+	height: 34px;
 	left: 0px;
 	list-style-type: none;
 	margin: 0px;
@@ -25,12 +24,38 @@ ul.ez_menu {
 	width: 100%;
 }
 
+ul.ez_menu ul.menu_list {
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	border-top: none;
+	display: none;
+	left: -1px;
+	list-style-type: none;
+	padding: 0px;
+	position: absolute;
+	top: 34px;
+	white-space: nowrap;
+	width: 150px;
+	z-index: 10;
+}
+
+ul.ez_menu ul.menu_list li {
+	border: none;
+	font-weight: normal;
+	padding: 0px;
+	width: 100%;
+}
+
+ul.ez_menu ul.menu_list li:hover {
+	background-color: #F5F5F5;
+	text-decoration: none;
+}
+
 ul.ez_menu li {
 	float: left;
 	font-weight: bold;
 	padding: 8px 20px 6px 12px;
 	position: relative;
-	z-index: 10;
 }
 
 ul.ez_menu li a {
@@ -43,14 +68,18 @@ ul.ez_menu li a:hover {
 
 ul.ez_menu li.menu_hover_on {
 	background-color: #EEEEEE;
+	height: 20px;
 }
 
 ul.ez_menu li.menu_hover_on a {
 	color: #000000;
 }
 
-ul.ez_menu li.menu_hover_off {
-	background-color: #DDDDDD;
+ul.ez_menu li.submenu_hover_on,
+ul.ez_menu li.submenu_hover_off {
+	border: 0px;
+	font-weight: bold;
+	padding-right: 20px;
 }
 
 ul.ez_menu li.submenu_hover_on {
@@ -61,60 +90,20 @@ ul.ez_menu li.submenu_hover_on a {
 	color: #000000;
 }
 
-ul.ez_menu li.submenu_hover_off {
-	background: #DDDDDD none;
-}
-
-ul.ez_menu ul.menu_list {
-	background-color: #FFFFFF;
-	border: 1px solid #DDDDDD;
-	border-top: none;
-	display: none;
-	left: -1px;
-	list-style-type: none;
-	padding: 0px;
-	position: absolute;
-	top: 31px;
-	white-space: nowrap;
-	width: 150px;
-}
-
-ul.ez_menu ul.menu_list li {
-	font-weight: normal;
-	padding: 0px;
-	width: 100%;
-}
-
-ul.ez_menu li.submenu_hover_on ul.menu_list li a {
+ul.ez_menu li.submenu_hover_on > ul.menu_list li a {
 	color: #787878;
 	display: block;
 	height: 16px;
-	padding: 6px 10px 6px 10px;
+	padding: 4px 10px 6px 10px;
 	width: auto;
 }
 
-ul.ez_menu ul.menu_list li a:hover {
-	text-decoration: none;
+ul.ez_menu li.submenu_hover_off {
+	background: transparent none;
 }
 
-ul.ez_menu ul.menu_list li.submenu {
-	border-top: 1px dashed #DDDDDD;
-}
-
-ul.ez_menu ul.menu_list li.submenu:first-child {
-	border: none;
-}
-
-ul.ez_menu ul.menu_list li.submenu ul {
-	border: 1px solid #DDDDDD;
+li.submenu ul.menu_list {
+	border-top: none;
 	left: 100%;
-	top: -1px;
-}
-
-ul.ez_menu ul.menu_list a.opt_hover_on {
-	background-color: #F5F5F5;
-}
-
-ul.ez_menu ul.menu_list span.opt_hover_off {
-	background-color: #FFFFFF;
+	top: 0px;
 }
