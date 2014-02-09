@@ -106,6 +106,10 @@ ul.ez_menu * li.submenu {
 	border-top: 1px dashed #EEEEEE !important;
 }
 
+ul.ez_menu * li.submenu:hover {
+	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center !important;
+}
+
 ul.ez_menu * li.submenu ul.menu_list {
 	border-top: 1px solid #EEEEEE;
 	left: 100%;
