@@ -8,31 +8,38 @@
 
 	<!-- CSS include start -->
 
-	<link rel="stylesheet" type="text/css" href="jquery.ez.menu.css">
+	<link rel="stylesheet" type="text/css" href="jquery.ez.menu.min.css">
 
 	<!-- CSS include end -->
 
 
 	<!-- Javascript insert start -->
 
-	<script src="jquery.ez.menu.js"></script>
+	<script src="jquery.ez.menu.min.js"></script>
 	<script>
 	$(document).ready(function() {
 		$('#container')
 			.EZMenu([
-            { "name" : "API", "options" : [
-                { "name" : "Content", "url" : "content", "options" : [
-                    { "name" : "Forms", "url" : "forms" }
-                ]},
-                { "name" : "Routes",  "url" : "routes" }
-            ]},
-            { "name" : "Users", "url" : "users", "options" : [
-                { "name" : "Roles", "url" : "roles" }
-            ]},
-            { "name" : "System", "options" : [
-                { "name" : "Look Profiler", "url" : "system"  },
-                { "name" : "Restart",  "url" : "restart" }
-            ]}
+				{ "name" : "Google", "url" : "http://google.com", "options" : [
+					{ "name" : "News", "url" : "http://news.google.com" },
+					{ "name" : "Tools", "options" : [
+						{ "name" : "Analytics", "url" : "http://google.com/analytics" },
+						{ "name" : "Maps", "url" : "http://maps.google.com" },
+						{ "name" : "Webmaster", "url" : "http://google.com/webmasters/tools" }
+					]}
+				]},
+				{ "name" : "Github", "url" : "http://github.com", "options" : [
+					{ "name" : "Projects", "options" : [
+						{ "name" : "Tidy-Table", "url" : "http://github.com/nuxy/Tidy-Table" },
+						{ "name" : "Poppy-Pagination", "url" : "http://github.com/nuxy/Poppy-Pagination" },
+						{ "name" : "SQLinJS", "url" : "http://github.com/nuxy/SQLinJS" }
+					]}
+				]},
+				{ "name" : "Other", "options" : [
+					{ "name" : "Coinbase", "url" : "http://coinbase.com" },
+					{ "name" : "Github", "url" : "http://github.com" },
+					{ "name" : "Wikipedia", "url" : "http://wikipedia.org" }
+				]}
 			]);
 	});
 	</script>
@@ -53,7 +60,7 @@
 <body>
 
 <p id="about">
-	This <strong>jQuery</strong> plugin is <a href="jquery.ez.menu.min.js" title="Only 2.4 kb">lightweight</a>, easy to <a href="README.html#install" title="Installation">install</a> / <a href="demo.css" title="Stylesheet">customize</a>, and works on all modern web browsers.
+	This <strong>jQuery</strong> plugin is <a href="jquery.ez.menu.min.js" title="Only 2.4 kB">lightweight</a>, easy to <a href="README.html#install" title="Installation">install</a> / <a href="demo.css" title="Stylesheet">customize</a>, and works on all modern web browsers.
 </p>
 
 
