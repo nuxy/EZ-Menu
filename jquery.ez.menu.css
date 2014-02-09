@@ -71,10 +71,6 @@ ul.ez_menu li.menu_hover_on {
 	height: 20px;
 }
 
-ul.ez_menu li.menu_hover_on a {
-	color: #000000;
-}
-
 ul.ez_menu li.submenu_hover_on,
 ul.ez_menu li.submenu_hover_off {
 	font-weight: bold;
@@ -108,6 +104,10 @@ ul.ez_menu * li.submenu {
 
 ul.ez_menu * li.submenu:hover {
 	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center !important;
+}
+
+ul.ez_menu * li.submenu:first-child {
+	border-top: none !important;
 }
 
 ul.ez_menu * li.submenu ul.menu_list {

@@ -47,10 +47,6 @@ ul.ez_menu li.menu_hover_on {
 	background-color: #EEEEEE;
 }
 
-ul.ez_menu li.menu_hover_on a {
-	color: #000000;
-}
-
 ul.ez_menu li.submenu_hover_on {
 	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center;
 }
@@ -72,6 +68,10 @@ ul.ez_menu li.submenu_hover_off {
 ul.ez_menu * li.submenu {
 	background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right center !important;
 	border-top: 1px dashed #EEEEEE !important;
+}
+
+ul.ez_menu * li.submenu:hover {
+	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center !important;
 }
 
 ul.ez_menu * li.submenu ul.menu_list {
