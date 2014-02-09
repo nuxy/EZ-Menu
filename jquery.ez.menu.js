@@ -116,7 +116,6 @@
 
 				link.attr('href', menu.url);
 			}
-			else
 
 			// create the sub-menu
 			if (menu.options) {
