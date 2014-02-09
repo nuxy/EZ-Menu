@@ -90,22 +90,23 @@
 				item.addClass('menu_hover_off');
 			}
 
-			// attach highlight events
-			item.mouseover(function() {
-				var $this = $(this);
+			// attach hover events
+			item.hover(
+				function() {
+					var $this = $(this);
 
-				if (!$this.attr('visible') && !$this.attr('target')) {
-					$this.removeClass('menu_hover_off').addClass('menu_hover_on');
+					if (!$this.attr('visible') && !$this.attr('target')) {
+						$this.removeClass('menu_hover_off').addClass('menu_hover_on');
+					}
+				},
+				function() {
+					var $this = $(this);
+
+					if (!$this.attr('visible') && !$this.attr('target')) {
+						$this.removeClass('menu_hover_on').addClass('menu_hover_off');
+					}
 				}
-			});
-
-			item.mouseout(function() {
-				var $this = $(this);
-
-				if (!$this.attr('visible') && !$this.attr('target')) {
-					$this.removeClass('menu_hover_on').addClass('menu_hover_off');
-				}
-			});
+			);
 
 			// attach redirect event
 			if (menu.url) {
