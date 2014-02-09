@@ -77,7 +77,6 @@ ul.ez_menu li.menu_hover_on a {
 
 ul.ez_menu li.submenu_hover_on,
 ul.ez_menu li.submenu_hover_off {
-	border: 0px;
 	font-weight: bold;
 	padding-right: 20px;
 }
@@ -102,8 +101,13 @@ ul.ez_menu li.submenu_hover_off {
 	background: transparent none;
 }
 
-li.submenu ul.menu_list {
-	border-top: none;
+ul.ez_menu * li.submenu {
+	background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right center !important;
+	border-top: 1px dashed #EEEEEE !important;
+}
+
+ul.ez_menu * li.submenu ul.menu_list {
+	border-top: 1px solid #EEEEEE;
 	left: 100%;
 	top: 0px;
 }
