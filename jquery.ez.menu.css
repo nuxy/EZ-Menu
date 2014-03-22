@@ -71,6 +71,10 @@ ul.ez_menu li.menu_hover_on {
 	height: 20px;
 }
 
+ul.ez_menu li.menu_hover_off {
+	height: 20px;
+}
+
 ul.ez_menu li.submenu_hover_on,
 ul.ez_menu li.submenu_hover_off {
 	font-weight: bold;

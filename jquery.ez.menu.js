@@ -91,22 +91,19 @@
 			}
 
 			// attach hover events
-			item.hover(
-				function() {
-					var $this = $(this);
+			item.bind('mouseover', function() {
+				var $this = $(this);
 
-					if (!$this.attr('visible') && !$this.attr('target')) {
-						$this.removeClass('menu_hover_off').addClass('menu_hover_on');
-					}
-				},
-				function() {
-					var $this = $(this);
-
-					if (!$this.attr('visible') && !$this.attr('target')) {
-						$this.removeClass('menu_hover_on').addClass('menu_hover_off');
-					}
+				if (!$this.attr('visible') && !$this.attr('target')) {
+					$this.removeClass('menu_hover_off').addClass('menu_hover_on');
 				}
-			);
+			});
+
+			list.bind('mouseleave',function() {
+				var $this = $(this).children('li');
+
+				$this.removeClass('menu_hover_on').addClass('menu_hover_off');
+			});
 
 			// attach redirect event
 			if (menu.url) {
