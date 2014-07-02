@@ -1,4 +1,4 @@
-= EZ Menu {<img src="https://travis-ci.org/nuxy/EZ-Menu.svg?branch=updates" alt="Build Status" />}[https://travis-ci.org/nuxy/EZ-Menu]
+= EZ Menu {<img src="https://travis-ci.org/nuxy/EZ-Menu.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/nuxy/EZ-Menu]
 
 Create a HTML navigation menu and sub-menus from JSON with ease.
 
