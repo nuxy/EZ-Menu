@@ -1,5 +1,5 @@
-/*
- *  EZ-Menu
+/**
+ *  EZ Menu
  *  An easy way to create a navigation menu from JSON
  *
  *  Copyright 2012-2014, Marc S. Brooks (http://mbrooks.info)
@@ -60,12 +60,15 @@
 			return methods.init.apply(this, arguments);
 		}
 		else {
-			$.error('Method ' +  method + ' does not exist on jQuery.EZMenu');
+			$.error('Method ' +  method + ' does not exist in jQuery.EZMenu');
 		}
 	};
 
-	/*
+	/**
 	 * Create the navigation menu elements
+	 * @param Object data
+	 * @param Object config
+	 * @returns Object
 	 */
 	function createNavMenu(data, config) {
 		var list = $('<ul></ul>')
@@ -91,7 +94,7 @@
 			}
 
 			// attach hover events
-			item.bind('mouseover', function() {
+			item.on('mouseover', function() {
 				var $this = $(this);
 
 				if (!$this.attr('visible') && !$this.attr('target')) {
@@ -99,7 +102,7 @@
 				}
 			});
 
-			list.bind('mouseleave',function() {
+			list.on('mouseleave',function() {
 				var $this = $(this).children('li');
 
 				$this.removeClass('menu_hover_on').addClass('menu_hover_off');
@@ -107,7 +110,7 @@
 
 			// attach redirect event
 			if (menu.url) {
-				item.bind('click', menu.url, function(event) {
+				item.on('click', menu.url, function(event) {
 					window.location.href = event.data;
 				});
 
@@ -129,8 +132,11 @@
 		return list;
 	}
 
-	/*
+	/**
 	 * Create the menu option elements
+	 * @param Object data
+	 * @param Object config
+	 * @returns Object
 	 */
 	function createMenuOpts(data, config) {
 		var list = $('<ul></ul>')
@@ -163,15 +169,18 @@
 		return list;
 	}
 
-	/*
+	/**
 	 * Attach hide/unhide events
+	 * @param Object data
+	 * @param Object item
+	 * @param Object opts
 	 */
 	function bindMenuEvents(data, item, opts) {
 		var action = (data.options.click2open) ? 'click' : 'mouseenter',
 			active = null,
 			opened = null;
 
-		item.bind(action, opts, function(event) {
+		item.on(action, opts, function(event) {
 			event.stopPropagation();
 
 			var $this = $(this);
@@ -206,7 +215,7 @@
 
 		if (action != 'mouseenter') return;
 
-		item.bind('mouseleave', opts, function() {
+		item.on('mouseleave', opts, function() {
 			if (!active && !opened) return;
 
 			// close all submenus
