@@ -8,7 +8,7 @@
 	<script>
 	QUnit.config.scrolltop = true;
 
-	var menu = 'div.ez_menu';
+	var menu = 'ul.ez_menu';
 	</script>
 
 	<script src="jquery.ez.menu.min.js"></script>
@@ -17,6 +17,7 @@
 	<!-- QUnit tests begin (order is important) -->
 
 	<script src="test/plugin/init.js"></script>
+	<script src="test/plugin/events.js"></script>
 
 	<!-- QUnit tests end -->
 
@@ -28,6 +29,6 @@
 </head>
 <body>
 	<div id="qunit"></div>
-	<div id="qunit-fixture"></div>
+	<div id="qunit-fixture" style="visibility:hidden"></div>
 </body>
 </html>
