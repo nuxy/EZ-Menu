@@ -102,7 +102,7 @@
 				}
 			});
 
-			list.on('mouseleave',function() {
+			list.on('mouseout',function() {
 				var $this = $(this).children('li');
 
 				$this.removeClass('menu_hover_on').addClass('menu_hover_off');
@@ -115,6 +115,11 @@
 				});
 
 				link.attr('href', menu.url);
+			}
+
+			// add custom classes
+			if (menu.classname) {
+				link.addClass(menu.classname);
 			}
 
 			// create the sub-menu
@@ -149,8 +154,14 @@
 				link = $('<a></a>')
 				.append(menu.name);
 
+			// attach redirect event
 			if (menu.url) {
 				link.attr('href', menu.url);
+			}
+
+			// add custom classes
+			if (menu.classname) {
+				link.addClass(menu.classname);
 			}
 
 			// create the sub-menu

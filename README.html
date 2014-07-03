@@ -57,9 +57,9 @@
 
 <pre>$(selector).EZMenu(<a href="#options"><em>options</em></a>, <em>config</em>);</pre>
 
-<h2>Source Code</h2>
-
 <p>Add the following <em>JavaScript/CSS</em> between the <code>&lt;head&gt;&lt;/head&gt;</code> tags of your HTML document.</p>
+
+<a name="example"></a>
 
 <pre>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;
 
@@ -74,7 +74,8 @@ $(document).ready(function() {
 				{ "name" : "Item 2A", "url" : "http://item2A.domain.com" },
 				{ "name" : "Menu List B", "options" : [
 					{ "name" : "Item 1B", "url" : "http://item1B.domain.com" },
-					{ "name" : "Item 2B", "url" : "http://item2B.domain.com" },
+					{ "name" : "Item 2B", "url" : "http://item2B.domain.com",
+						"classname" : "custom_link" },
 				]}
 			]}
 		]);
@@ -123,6 +124,17 @@ $(document).ready(function() {
 </table>
 
 <p>Click <a href="http://jqueryui.com/demos/effect/easing.html">here</a> for more information about the available jQuery UI Easing effects.</p>
+
+<h2>Overriding Events</h2>
+
+<p>This can be easily achieved using optional <em>classname</em> in the menu JSON configuration.  The following code corresponds to the <a href="#example">example</a> provided above.</p>
+
+<pre>$('a.custom_link').on('click', function(event) {
+	event.preventDefault();
+
+	// do something
+});
+</pre>
 
 <h2>jQuery Support</h2>
 
