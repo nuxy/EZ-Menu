@@ -2,14 +2,14 @@ module('EZ-Menu', {
 	setup : function() {
 		$('#qunit-fixture')
 			.EZMenu([
-				{ "name" : "Menu Link 1", "url" : "http://domain1.com" },
-				{ "name" : "Menu Link 2", "url" : "http://domain2.com" },
+				{ "name" : "Menu Link 1", "url" : "http://menu1.domain.com" },
+				{ "name" : "Menu Link 2", "url" : "http://menu2.domain.com" },
 				{ "name" : "Menu List A", "options" : [
-					{ "name" : "Item 1", "url" : "http://domain3.com" },
-					{ "name" : "Item 2", "url" : "http://domain4.com" },
-					{ "name" : "Menu List 2", "options" : [
-						{ "name" : "Item 3", "url" : "http://domain3.com" },
-						{ "name" : "Item 4", "url" : "http://domain4.com" }
+					{ "name" : "Item 1A", "url" : "http://item1A.domain.com" },
+					{ "name" : "Item 2A", "url" : "http://item2A.domain.com" },
+					{ "name" : "Menu List B", "options" : [
+						{ "name" : "Item 1B", "url" : "http://item1B.domain.com" },
+						{ "name" : "Item 2B", "url" : "http://item2B.domain.com" }
 					]}
 				]}
 			]);
