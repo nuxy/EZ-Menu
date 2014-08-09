@@ -97,7 +97,7 @@
 			item.on('mouseover', function() {
 				var $this = $(this);
 
-				if (!$this.attr('visible') && !$this.attr('target')) {
+				if (!$this.prop('visible') && !$this.attr('target')) {
 					$this.removeClass('menu_hover_off').addClass('menu_hover_on');
 				}
 			});
@@ -197,12 +197,12 @@
 			var $this = $(this);
 
 			// hide menu sub-menus
-			if ($this.attr('visible')) {
+			if ($this.prop('visible')) {
 				if (!active || !opened) return;
 
 				event.data.hide(data.options.hideSpeed, data.options.hideEasing, function() {
 					$this.removeClass('submenu_hover_on').addClass('submenu_hover_off')
-						.removeAttr('visible');
+						.removeProp('visible');
 
 					active = null;
 					opened = null;
@@ -214,7 +214,7 @@
 				if (active || opened) return;
 
 				$this.removeClass('submenu_hover_off').addClass('submenu_hover_on')
-					.attr('visible', true);
+					.prop('visible', true);
 
 				event.data.show(data.options.showSpeed, data.options.showEasing, function() {
 					opened = true;
