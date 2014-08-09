@@ -2,7 +2,7 @@
 
 Create a HTML navigation menu and sub-menus from JSON with ease.
 
-http://github.com/nuxy/EZ-Menu/raw/master/preview.jpg
+{<img src="https://github.com/nuxy/EZ-Menu/raw/master/preview.jpg" alt="EZ-Menu" />}[https://labs.mbrooks.info/demos/EZ-Menu]
 
 == Features
 
@@ -15,7 +15,7 @@ http://github.com/nuxy/EZ-Menu/raw/master/preview.jpg
 
 == Installation
 
-Download the latest {sources}[https://github.com/nuxy/EZ-Menu/tags] and refer to the {README}[http://labs.mbrooks.info/demos/EZ-Menu/README.html] for more information about this package.
+Download the latest {sources}[https://github.com/nuxy/EZ-Menu/tags] and refer to the {README}[https://labs.mbrooks.info/demos/EZ-Menu/README.html] for more information about this package.
 
 == Author
 
