@@ -1,0 +1,19 @@
+{
+  "name": "ez-menu",
+  "version": "1.7.0",
+  "homepage": "https://github.com/nuxy/EZ-Menu",
+  "description": "An easy way to create a navigation menu from JSON",
+  "main": "jquery.ez-menu.js",
+  "keywords": [
+    "javascript",
+    "jquery",
+    "library"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "*.rdoc",
+    "Rakefile",
+    "test"
+  ]
+}
