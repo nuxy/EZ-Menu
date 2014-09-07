@@ -60,7 +60,7 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
 		}
 		else
-		if (typeof method === 'object') || !method) {
+		if (typeof method === 'object' || !method) {
 			return methods.init.apply(this, arguments);
 		}
 		else {
