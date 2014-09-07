@@ -64,7 +64,7 @@ test('Open Menu 3', function() {
 
 		ok(submenuA[0], 'Submenu elements are expected');
 
-		ok(menu3.attr('visible'), "'Menu List A' options are visible");
+		ok(menu3.prop('visible'), "'Menu List A' options are visible");
 
 		ok(submenuA.hasClass('menu_list'), "<ul> contains required class 'menu_list'");
 
@@ -100,7 +100,7 @@ test('Open Menu 3', function() {
 
 			ok(submenuB[0], 'Submenu elements are expected');
 
-			ok(menu3.attr('visible'), "Options are visible");
+			ok(menu3.prop('visible'), "Options are visible");
 
 			ok(submenuB.hasClass('menu_list'), "<ul> contains required class 'menu_list'");
 
@@ -130,7 +130,7 @@ test('Open Menu 3', function() {
 			setTimeout(function() {
 				ok(menuA_sub3.hasClass('submenu_hover_off'), "<li> contains required class 'submenu_hover_off'");
 
-				ok(!submenuB.attr('visible'), 'Submenu B options are not visible');
+				ok(!submenuB.prop('visible'), 'Submenu B options are not visible');
 
 				start();
 
