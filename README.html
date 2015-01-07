@@ -30,6 +30,12 @@
 
 <h2>Installation</h2>
 
+<p>This package can be easily installed using <a href="http://bower.io">Bower</a>.</p>
+
+<pre>$ bower install ez-menu</pre>
+
+<p>Manual install:</p>
+
 <ol>
 	<li>Download the latest <a href="https://github.com/nuxy/EZ-Menu/tags">sources</a> to your computer using a web browser.</li>
 	<li>Extract the contents of the <em>.zip</em> into a folder on your local computer.</li>
@@ -67,8 +73,8 @@
 $(document).ready(function() {
 	$('#container')
 		.EZMenu([
-			{ "name": "Menu Link 1", "url": "http://menu1.domain.com" },
-			{ "name": "Menu Link 2", "url": "http://menu2.domain.com" },
+			{ "name": "Menu Link 1", "url": "http://menu1.domain.com", "target": "_blank" },
+			{ "name": "Menu Link 2", "url": "http://menu2.domain.com", "target": "_blank" },
 			{ "name": "Menu List A", "options": [
 				{ "name": "Item 1A", "url": "http://item1A.domain.com" },
 				{ "name": "Item 2A", "url": "http://item2A.domain.com" },
@@ -146,7 +152,7 @@ $(document).ready(function() {
 
 <h2>Releases</h2>
 
-<p>I have included with this package a <a href="http://dean.edwards.name/packer">packed</a> version (2.7 kB) and developers version (unpacked 5 kB)</p>
+<p>I have included with this package a <a href="http://dean.edwards.name/packer">packed</a> version (2.8 kB) and developers version (unpacked 5.9 kB)</p>
 
 <p>You can always find the latest updates within this projects repository.</p>
 
