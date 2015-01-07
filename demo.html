@@ -3,6 +3,7 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
+
 	<!-- JavaScript insert start -->
 
 	<script src="ez-menu.min.js"></script>
@@ -10,7 +11,7 @@
 	$(document).ready(function() {
 		$('#container')
 			.EZMenu([
-				{ "name": "Google", "url": "http://google.com", "options": [
+				{ "name": "Google", "url": "http://google.com", "target": "_blank", "options": [
 					{ "name": "News", "url": "http://news.google.com" },
 					{ "name": "Tools", "options": [
 						{ "name": "Analytics", "url": "http://google.com/analytics" },
@@ -18,7 +19,7 @@
 						{ "name": "Webmaster", "url": "http://google.com/webmasters/tools" }
 					]}
 				]},
-				{ "name": "Github", "url": "http://github.com", "options": [
+				{ "name": "Github", "url": "http://github.com", "target": "_blank", "options": [
 					{ "name": "Projects", "options": [
 						{ "name": "Tidy-Table",       "url": "http://github.com/nuxy/Tidy-Table" },
 						{ "name": "Poppy-Pagination", "url": "http://github.com/nuxy/Poppy-Pagination" },
