@@ -15,7 +15,20 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 }
 
 (function($) {
+
+	/**
+	 * @namespace EZMenu
+	 */
 	var methods = {
+
+		/**
+		 * Create new instance of EZ-Menu
+		 * @memberof EZMenu
+		 * @method init
+		 * @param {Object} options
+		 * @param {Object} config
+		 * @returns {Object} jQuery object
+		 */
 		"init": function(options, config) {
 
 			// default options
@@ -49,6 +62,11 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 			});
 		},
 
+		/**
+		 * Perform cleanup
+		 * @memberof EZMenu
+		 * @method destroy
+		 */
 		"destroy": function() {
 			return this.each(function() {
 				$(this).removeData();
@@ -57,7 +75,9 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 
 		/**
 		 * Create the navigation menu elements
-		 * @returns Object jQuery object
+		 * @memberof EZMenu
+		 * @method _createNavMenu
+		 * @returns {Object} jQuery object
 		 * @private
 		 */
 		"_createNavMenu": function() {
@@ -133,8 +153,10 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 
 		/**
 		 * Create the menu option elements
-		 * @param Object config
-		 * @returns Object jQuery object
+		 * @memberof EZMenu
+		 * @method _createMenuOpts
+		 * @param {Object} config
+		 * @returns {Object} jQuery object
 		 * @private
 		 */
 		"_createMenuOpts": function(config) {
@@ -179,9 +201,11 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 
 		/**
 		 * Attach hide/unhide events
-		 * @param Object data
-		 * @param Object item
-		 * @param Object submenu
+		 * @memberof EZMenu
+		 * @method _bindMenuEvents
+		 * @param {Object} item
+		 * @param {Object} submenu
+		 * @private
 		 */
 		"_bindMenuEvents": function(item, submenu) {
 			var $this = $(this),
