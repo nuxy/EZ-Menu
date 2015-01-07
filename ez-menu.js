@@ -58,7 +58,9 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 					});
 				}
 
-				$this.append( $this.EZMenu('_createNavMenu') );
+				$this.append(
+					$this.EZMenu('_createNavMenu')
+				);
 			});
 		},
 
@@ -107,7 +109,7 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 					item.addClass('menu_hover_off');
 				}
 
-				// attach hover events
+				// bind hover events
 				item.on('mouseover', function() {
 					var $this = $(this);
 
@@ -122,13 +124,12 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 					$this.removeClass('menu_hover_on').addClass('menu_hover_off');
 				});
 
-				// attach redirect event
+				// bind anchor link event
 				if (menu.url) {
-					item.on('click', menu.url, function(event) {
-						window.location.href = event.data;
+					link.attr({
+						target: (menu.target) ? menu.target : '_self',
+						href:   menu.url
 					});
-
-					link.attr('href', menu.url);
 				}
 
 				// add custom classes
@@ -160,8 +161,7 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 		 * @private
 		 */
 		"_createMenuOpts": function(config) {
-			var $this = $(this),
-				data  = $this.data();
+			var $this = $(this);
 
 			// generate as unordered list
 			var list = $('<ul></ul>')
@@ -173,9 +173,12 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 					link = $('<a></a>')
 						.append(menu.name);
 
-				// attach redirect event
+				// bind anchor link event
 				if (menu.url) {
-					link.attr('href', menu.url);
+					link.attr({
+						target: (menu.target) ? menu.target : '_self',
+						href:   menu.url
+					});
 				}
 
 				// add custom classes
