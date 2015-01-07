@@ -16,15 +16,15 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 
 (function($) {
 	var methods = {
-		"init" : function(options, config) {
+		"init": function(options, config) {
 
 			// default options
 			var settings = {
-				showEasing : 'linear',
-				hideEasing : 'linear',
-				showSpeed  : 'fast',
-				hideSpeed  : 'fast',
-				click2open : false
+				showEasing: 'linear',
+				hideEasing: 'linear',
+				showSpeed:  'fast',
+				hideSpeed:  'fast',
+				click2open: false
 			};
 
 			if (arguments.length > 1) {
@@ -40,7 +40,7 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 
 				if ( $.isEmptyObject(data) ) {
 					$this.data({
-						options : settings
+						options: settings
 					});
 				}
 
@@ -48,7 +48,7 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 			});
 		},
 
-		"destroy" : function() {
+		"destroy": function() {
 			return this.each(function() {
 				$(this).removeData();
 			});
