@@ -25,13 +25,15 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 		 * Create new instance of EZ-Menu
 		 * @memberof EZMenu
 		 * @method init
-		 * @param {Object} options
+		 * @param {Object} settings
 		 * @param {Object} config
 		 * @returns {Object} jQuery object
 		 */
-		"init": function(options, config) {
+		"init": function(settings, config) {
+			var $this = $(this),
+				data  = $this.data();
 
-			// default options
+			// default settings
 			var defaults = {
 				showEasing: 'linear',
 				hideEasing: 'linear',
@@ -41,27 +43,22 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 			};
 
 			if (arguments.length > 1) {
-				$.extend(defaults, options);
+				$.extend(defaults, settings);
 			}
 			else {
-				config = options;
+				config = settings;
 			}
 
-			return this.each(function() {
-				var $this = $(this),
-					data  = $this.data();
+			if ( $.isEmptyObject(data) ) {
+				$this.data({
+					settings: defaults,
+					config:   config
+				});
+			}
 
-				if ( $.isEmptyObject(data) ) {
-					$this.data({
-						options: defaults,
-						config:  config
-					});
-				}
-
-				$this.append(
-					$this.EZMenu('_createNavMenu')
-				);
-			});
+			$this.append(
+				$this.EZMenu('_createNavMenu')
+			);
 		},
 
 		/**
@@ -70,9 +67,7 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 		 * @method destroy
 		 */
 		"destroy": function() {
-			return this.each(function() {
-				$(this).removeData();
-			});
+			$(this).removeData();
 		},
 
 		/**
@@ -83,16 +78,15 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 		 * @private
 		 */
 		"_createNavMenu": function() {
-			var $this  = $(this),
-				data   = $this.data(),
-				config = data.config;
+			var $this = $(this),
+				data  = $this.data();
 
 			// generate as unordered list
 			var list = $('<ul></ul>')
 				.addClass('ez_menu');
 
-			for (var i = 0; i < config.length; i++) {
-				var menu = config[i],
+			for (var i = 0; i < data.config.length; i++) {
+				var menu = data.config[i],
 					item = $('<li></li>'),
 					link = $('<a></a>')
 						.append(menu.name);
@@ -212,25 +206,25 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 		 */
 		"_bindMenuEvents": function(item, submenu) {
 			var $this = $(this),
-				data  = $this.data(),
-				opts  = data.options;
+				data  = $this.data();
 
-			var action = (opts.click2open) ? 'click' : 'mouseenter',
+			var action = (data.settings.click2open) ? 'click' : 'mouseenter',
 				active = null,
 				opened = null;
 
 			item.on(action, submenu, function(event) {
 				event.stopPropagation();
 
-				var $this = $(this);
+				var elm = $(this),
+					obj = event.data;
 
 				// hide menu sub-menus
-				if ($this.prop('visible')) {
+				if (elm.prop('visible')) {
 					if (!active || !opened) return;
 
-					event.data.hide(opts.hideSpeed, opts.hideEasing, function() {
+					obj.hide(data.settings.hideSpeed, data.settings.hideEasing, function() {
 
-						$this.removeClass('submenu_hover_on').addClass('submenu_hover_off')
+						elm.removeClass('submenu_hover_on').addClass('submenu_hover_off')
 							.removeProp('visible');
 
 						active = null;
@@ -242,10 +236,10 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 				else {
 					if (active || opened) return;
 
-					$this.removeClass('submenu_hover_off').addClass('submenu_hover_on')
+					elm.removeClass('submenu_hover_off').addClass('submenu_hover_on')
 						.prop('visible', true);
 
-					event.data.show(opts.showSpeed, opts.showEasing, function() {
+					obj.show(data.settings.showSpeed, data.settings.showEasing, function() {
 						opened = true;
 					});
 
@@ -255,7 +249,7 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 
 			if (action != 'mouseenter') return;
 
-			item.on('mouseleave', opts, function() {
+			item.on('mouseleave', data.settings, function() {
 				if (!active && !opened) return;
 
 				// close all submenus
