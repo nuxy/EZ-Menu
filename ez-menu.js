@@ -56,7 +56,7 @@ if (!window.jQuery || (window.jQuery && window.jQuery.fn.jquery < '1.8.3')) {
 				});
 			}
 
-			$this.append(
+			return $this.append(
 				$this.EZMenu('_createNavMenu')
 			);
 		},
