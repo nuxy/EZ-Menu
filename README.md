@@ -7,7 +7,7 @@ Create a HTML navigation menu and sub-menus from JSON with ease.
 ## Features
 
 - Extensible HTML/CSS interface.
-- Compatible with Firefox 3.6`, Chrome, Safari 5`, Opera, and Internet Explorer 7+ web browsers.
+- Compatible with Firefox 3.6, Chrome, Safari 5, Opera, and Internet Explorer 7+ web browsers.
 - Compatible with iOS and Android mobile web browsers.
 - Easy to set-up and customize.
 - Supports unlimited nested sub-menus.
