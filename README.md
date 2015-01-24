@@ -17,7 +17,7 @@ Create a HTML navigation menu and sub-menus from JSON with ease.
 
 This package can be easily installed using [Bower](http://bower.io).
 
-  $ bower install ez-menu
+    $ bower install ez-menu
 
 Please refer to the [README](https://labs.mbrooks.info/demos/EZ-Menu/README.html) for more information about this package.
 
