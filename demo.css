@@ -26,6 +26,10 @@ ul.ez_menu ul.menu_list li {
 	font-weight: normal;
 }
 
+ul.ez_menu ul.menu_list li:active {
+	background-color: #F5F5F5;
+}
+
 ul.ez_menu ul.menu_list li:hover {
 	background-color: #F5F5F5;
 	text-decoration: none;
