@@ -110,7 +110,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 				}
 
 				// bind hover events
-				item.on('mouseover', function() {
+				item.on('mouseover touchenter', function() {
 					var $this = $(this);
 
 					if (!$this.prop('visible') && !$this.attr('target')) {
@@ -118,7 +118,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 					}
 				});
 
-				list.on('mouseout',function() {
+				list.on('mouseout touchend',function() {
 					var $this = $(this).children('li');
 
 					$this.removeClass('menu_hover_on').addClass('menu_hover_off');
@@ -130,6 +130,12 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 						target: (menu.target) ? menu.target : '_self',
 						href:   menu.url
 					});
+
+					link.on('click', function(event) {
+						if (typeof window.ontouchstart !== 'undefined') {
+							event.preventDefault();
+						}
+					});
 				}
 
 				// add custom classes
@@ -140,6 +146,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 				// create the sub-menu
 				if (menu.options) {
 					var submenu = $this.EZMenu('_createMenuOpts', menu.options);
+
 					item.append(submenu);
 
 					$this.EZMenu('_bindMenuEvents', item, submenu);
@@ -179,6 +186,12 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 						target: (menu.target) ? menu.target : '_self',
 						href:   menu.url
 					});
+
+					link.on('click', function(event) {
+						if (typeof window.ontouchstart !== 'undefined') {
+							event.preventDefault();
+						}
+					});
 				}
 
 				// add custom classes
@@ -214,7 +227,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 			var $this = $(this),
 				data  = $this.data();
 
-			var action = (data.settings.click2open) ? 'click' : 'mouseenter',
+			var action = (data.settings.click2open && !data.settings.responsive) ? 'click' : 'mouseenter touchenter',
 				active = null,
 				opened = null;
 
@@ -224,7 +237,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 				var elm = $(this),
 					obj = event.data;
 
-				// hide menu sub-menus
+				// hide menu sub-menu
 				if (elm.prop('visible')) {
 					if (!active || !opened) return;
 
@@ -253,9 +266,9 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 				}
 			});
 
-			if (action != 'mouseenter') return;
+			if (action != 'mouseenter touchenter') return;
 
-			item.on('mouseleave', data.settings, function() {
+			item.on('mouseleave touchleave', data.settings, function() {
 				if (!active && !opened) return;
 
 				// close all submenus
