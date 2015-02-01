@@ -56,7 +56,6 @@ ul.ez_menu li.submenu_hover_on a {
 }
 
 ul.ez_menu li.submenu_hover_on > ul.menu_list li a {
-	color: #787878;
 	height: 16px;
 	padding: 4px 10px 6px 10px;
 }
@@ -88,6 +87,10 @@ ul.ez_menu * li.submenu ul.menu_list {
 	#container ul.ez_menu {
 		margin: 0px;
 		width: auto !important;
+	}
+
+	#container ul.ez_menu * li.submenu > a {
+		color: #787878 !important;
 	}
 
 	#footer {

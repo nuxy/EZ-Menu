@@ -11,7 +11,6 @@
  */
 
 ul.ez_menu {
-	background-color: #DDDDDD;
 	border: 1px solid #DDDDDD;
 	cursor: pointer;
 	height: 34px;
@@ -98,7 +97,7 @@ ul.ez_menu li.submenu_hover_on > ul.menu_list li a {
 }
 
 ul.ez_menu li.submenu_hover_off {
-	background: transparent none;
+	background: none;
 }
 
 ul.ez_menu * li.submenu {
@@ -127,6 +126,7 @@ ul.ez_menu * li.submenu ul.menu_list {
 		background-color: none; 	 	
 		border: 0px;
 		height: auto;
+		overflow: hidden;
 	}
 
 	ul.ez_menu.media ul.menu_list {
@@ -159,7 +159,7 @@ ul.ez_menu * li.submenu ul.menu_list {
 	}
 
 	ul.ez_menu.media li {
-		background-color: #FFFFFF !important;
+		background-color: none !important;
 		float: none;
 		padding: 0px;
 	}
