@@ -77,3 +77,28 @@ ul.ez_menu * li.submenu:hover {
 ul.ez_menu * li.submenu ul.menu_list {
 	border-top: 1px solid #EEEEEE;
 }
+
+/* responsive (mobile devices) */
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+	#about {
+		box-shadow: none;
+	}
+
+	#container ul.ez_menu {
+		margin: 0px;
+		width: auto !important;
+	}
+
+	#footer {
+		text-align: center;
+		padding: 0px;
+		padding-bottom: 10px;
+		width: 100%;
+	}
+
+	#footer span.copy {
+		float: none;
+		right: 0px;
+	}
+}
