@@ -1,8 +1,7 @@
 /* example */
 
 #container ul.ez_menu {
-	margin: 10% auto 0px auto;
-	width: 800px;
+	width: auto;
 }
 
 #container ul.ez_menu {
@@ -61,7 +60,7 @@ ul.ez_menu li.submenu_hover_on > ul.menu_list li a {
 }
 
 ul.ez_menu li.submenu_hover_off {
-	background: transparent none;
+	background: none;
 }
 
 ul.ez_menu * li.submenu {
