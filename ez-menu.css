@@ -21,7 +21,7 @@ ul.ez_menu {
 	padding: 0px;
 	position: fixed;
 	top: 0px;
-	width: auto !important;
+	width: auto;
 }
 
 ul.ez_menu ul.menu_list {
