@@ -39,7 +39,8 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 				hideEasing: 'linear',
 				showSpeed:  'fast',
 				hideSpeed:  'fast',
-				click2open: false
+				click2open: false,
+				responsive: false
 			};
 
 			if (arguments.length > 1) {
@@ -84,6 +85,11 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 			// generate as unordered list
 			var list = $('<ul></ul>')
 				.addClass('ez_menu');
+
+			// responsive layout?
+			if (data.settings.responsive) {
+				list.addClass('media');
+			}
 
 			for (var i = 0; i < data.config.length; i++) {
 				var menu = data.config[i],
@@ -139,7 +145,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 					$this.EZMenu('_bindMenuEvents', item, submenu);
 				}
 
-				item.append(link);
+				item.prepend(link);
 				list.append(item);
 			}
 
@@ -189,7 +195,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 					$this.EZMenu('_bindMenuEvents', item, submenu);
 				}
 
-				item.append(link);
+				item.prepend(link);
 				list.append(item);
 			}
 

@@ -21,7 +21,7 @@ ul.ez_menu {
 	padding: 0px;
 	position: fixed;
 	top: 0px;
-	width: 100%;
+	width: auto !important;
 }
 
 ul.ez_menu ul.menu_list {
@@ -35,7 +35,7 @@ ul.ez_menu ul.menu_list {
 	position: absolute;
 	top: 34px;
 	white-space: nowrap;
-	width: 150px;
+	min-width: 150px;
 	z-index: 10;
 }
 
@@ -118,4 +118,83 @@ ul.ez_menu * li.submenu ul.menu_list {
 	border-top: 1px solid #EEEEEE;
 	left: 100%;
 	top: 0px;
+}
+
+/* responsive (mobile devices) */
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+	ul.ez_menu.media {
+		background-color: none; 	 	
+		border: 0px;
+		height: auto;
+	}
+
+	ul.ez_menu.media ul.menu_list {
+		background-color: none;
+		border: 0px;
+		left: auto;
+		margin: 0px;
+		padding: 0px;
+		padding-right: 20px;
+		position: relative;
+		top: auto;
+		white-space: normal;
+		width: 100% !important;
+	}
+
+	ul.ez_menu.media ul.menu_list li {
+		list-style-type: square;
+		margin: 0px;
+		position: relative;
+	}
+
+	ul.ez_menu.media ul.menu_list li:hover {
+		background-color: none;
+	}
+
+	ul.ez_menu.media > li > a {
+		background-color: #CCCCCC;
+		border-bottom: 1px solid #DDDDDD;
+		padding: 8px 20px 6px 12px;
+	}
+
+	ul.ez_menu.media li {
+		background-color: #FFFFFF !important;
+		float: none;
+		padding: 0px;
+	}
+
+	ul.ez_menu.media li.menu_hover_on,
+	ul.ez_menu.media li.menu_hover_off {
+		height: auto;
+	}
+
+	ul.ez_menu.media li.submenu_hover_on,
+	ul.ez_menu.media li.submenu_hover_off {
+		padding-right: 0px;
+	}
+
+	ul.ez_menu.media li.submenu_hover_on {
+		background: #CCCCCC url( images/arrow_asc.gif ) no-repeat right 10px;
+	}
+
+	ul.ez_menu.media li.submenu_hover_on > ul.menu_list li a {
+		padding: auto;
+	}
+
+	ul.ez_menu.media * li.submenu {
+		background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right 10px !important;
+		font-weight: bold;
+	}
+
+	ul.ez_menu.media * li.submenu:hover {
+		background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right 10px !important;
+		font-weight: bold;
+	}
+
+	ul.ez_menu.media * li.submenu ul.menu_list {
+		border-top: 0px;
+		left: 0px;
+		top: 0px;
+	}
 }
