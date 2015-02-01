@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=320px, initial-scale=1, maximum-scale=1">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 
@@ -10,7 +12,10 @@
 	<script>
 	$(document).ready(function() {
 		$('#container')
-			.EZMenu([
+			.EZMenu({
+				responsive: true
+			},
+			[
 				{ "name": "Google", "url": "http://google.com", "target": "_blank", "options": [
 					{ "name": "News", "url": "http://news.google.com" },
 					{ "name": "Tools", "options": [
@@ -65,7 +70,7 @@
 <body>
 
 <p id="about">
-	This <strong>jQuery</strong> plugin is <a href="ez-menu.min.js" title="Only 2.8 kB">lightweight</a>, easy to <a href="README.html#install" title="Installation">install</a> / <a href="demo.css" title="Stylesheet">customize</a>, and works on all modern web browsers.
+	This <strong>jQuery</strong> plugin is <a href="ez-menu.min.js" title="Only 3.1 kB">lightweight</a>, easy to <a href="README.html#install" title="Installation">install</a> / <a href="demo.css" title="Stylesheet">customize</a>, and works on all modern web browsers.
 </p>
 
 
