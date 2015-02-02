@@ -87,12 +87,12 @@ ul.ez_menu * li.submenu ul.menu_list {
 		box-shadow: none;
 	}
 
-	#container ul.ez_menu {
+	#container ul.ez_menu.media {
 		margin: 0px;
 		width: auto !important;
 	}
 
-	#container ul.ez_menu * li.submenu > a {
+	#container ul.ez_menu.media * li.submenu > a {
 		color: #787878 !important;
 	}
 
