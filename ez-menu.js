@@ -1,8 +1,8 @@
 /**
  *  EZ Menu
- *  An easy way to create a navigation menu from JSON
+ *  Create a HTML navigation menu and sub-menus from JSON with ease.
  *
- *  Copyright 2012-2015, Marc S. Brooks (http://mbrooks.info)
+ *  Copyright 2012-2015, Marc S. Brooks (https://mbrooks.info)
  *  Licensed under the MIT license:
  *  http://www.opensource.org/licenses/mit-license.php
  *

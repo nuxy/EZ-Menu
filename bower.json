@@ -2,7 +2,7 @@
   "name": "ez-menu",
   "version": "1.9.1",
   "homepage": "https://github.com/nuxy/EZ-Menu",
-  "description": "An easy way to create a navigation menu from JSON",
+  "description": " Create a HTML navigation menu and sub-menus from JSON with ease.",
   "main": "ez-menu.js",
   "keywords": [
     "javascript",
