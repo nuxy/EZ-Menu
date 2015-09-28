@@ -23,17 +23,20 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
     /**
      * Create new instance of EZ-Menu
+     *
      * @memberof EZMenu
      * @method init
+     *
      * @param {Object} settings
      * @param {Object} config
+     *
      * @returns {Object} jQuery object
      */
     "init": function(settings, config) {
       var $this = $(this),
           data  = $this.data();
 
-      // default settings
+      // Default settings
       var defaults = {
         showEasing: 'linear',
         hideEasing: 'linear',
@@ -64,6 +67,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
     /**
      * Perform cleanup
+     *
      * @memberof EZMenu
      * @method destroy
      */
@@ -72,21 +76,23 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
     },
 
     /**
-     * Create the navigation menu elements
+     * Create the navigation menu elements.
+     *
      * @memberof EZMenu
      * @method _createNavMenu
-     * @returns {Object} jQuery object
      * @private
+     *
+     * @returns {Object} jQuery object
      */
     "_createNavMenu": function() {
       var $this = $(this),
           data  = $this.data();
 
-      // generate as unordered list
+      // Generate as unordered list
       var list = $('<ul></ul>')
         .addClass('ez_menu');
 
-      // responsive layout?
+      // Responsive layout?
       if (data.settings.responsive) {
         list.addClass('media');
       }
@@ -100,7 +106,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
         var href = window.location,
             curr = href.protocol + '//' + href.host + href.pathname;
 
-        // highlight the selected option
+        // Highlight the selected option
         if (href.pathname == menu.url || curr == menu.url) {
           item.addClass('menu_hover_on')
             .attr('target', true);
@@ -109,7 +115,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
           item.addClass('menu_hover_off');
         }
 
-        // bind hover events
+        // Bind hover events
         item.on('mouseover touchenter', function() {
           var $this = $(this);
 
@@ -124,7 +130,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
           $this.removeClass('menu_hover_on').addClass('menu_hover_off');
         });
 
-        // bind anchor link event
+        // Bind anchor link event
         if (menu.url) {
           link.attr({
             target: (menu.target) ? menu.target : '_self',
@@ -138,12 +144,12 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
           });
         }
 
-        // add custom classes
+        // Add custom classes
         if (menu.classname) {
           link.addClass(menu.classname);
         }
 
-        // create the sub-menu
+        // Create the sub-menu
         if (menu.options) {
           var submenu = $this.EZMenu('_createMenuOpts', menu.options);
 
@@ -160,17 +166,20 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
     },
 
     /**
-     * Create the menu option elements
+     * Create the menu option elements.
+     *
      * @memberof EZMenu
      * @method _createMenuOpts
-     * @param {Object} config
-     * @returns {Object} jQuery object
      * @private
+     *
+     * @param {Object} config
+     *
+     * @returns {Object} jQuery object
      */
     "_createMenuOpts": function(config) {
       var $this = $(this);
 
-      // generate as unordered list
+      // Generate as unordered list
       var list = $('<ul></ul>')
         .addClass('menu_list');
 
@@ -180,7 +189,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
             link = $('<a></a>')
               .append(menu.name);
 
-        // bind anchor link event
+        // Bind anchor link event
         if (menu.url) {
           link.attr({
             target: (menu.target) ? menu.target : '_self',
@@ -194,12 +203,12 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
           });
         }
 
-        // add custom classes
+        // Add custom classes
         if (menu.classname) {
           link.addClass(menu.classname);
         }
 
-        // create the sub-menu
+        // Create the sub-menu
         if (menu.options) {
           var submenu = $this.EZMenu('_createMenuOpts', menu.options);
 
@@ -216,12 +225,14 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
     },
 
     /**
-     * Attach hide/unhide events
+     * Attach hide/unhide events.
+     *
      * @memberof EZMenu
      * @method _bindMenuEvents
+     * @private
+     *
      * @param {Object} item
      * @param {Object} submenu
-     * @private
      */
     "_bindMenuEvents": function(item, submenu) {
       var $this = $(this),
@@ -237,7 +248,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
         var elm = $(this),
             obj = event.data;
 
-        // hide menu sub-menu
+        // Hide menu sub-menu
         if (elm.prop('visible')) {
           if (!active || !opened) return;
 
@@ -251,7 +262,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
           });
         }
 
-        // show select menu items
+        // Show select menu items
         else {
           if (active || opened) return;
 
@@ -271,7 +282,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
       item.on('mouseleave touchleave', data.settings, function() {
         if (!active && !opened) return;
 
-        // close all submenus
+        // Close all submenus
         item.each(function() {
           var elm = $(this);
 

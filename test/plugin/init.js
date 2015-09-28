@@ -15,7 +15,7 @@ module('EZ-Menu', {
       ]);
   },
   teardown: function() {
-    // do nothing - preserve element structure
+    // Do nothing - preserve element structure
   }
 });
 
