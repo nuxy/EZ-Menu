@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="https://mbrooks.info/readme.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="https://mbrooks.info/readme.min.css">
 
-	<title>README</title>
+  <title>README</title>
 </head>
 <body>
 
@@ -18,13 +18,13 @@
 <h2>Features</h2>
 
 <ul>
-	<li>Extensible HTML/CSS interface.</li>
-	<li>Compatible with Firefox 3.6+, Chrome, Safari 5+, Opera, and Internet Explorer 7+ web browsers.</li>
-	<li>Compatible with iOS and Android mobile web browsers.</li>
-	<li>Fully responsive layout with touch event support.</li>
-	<li>Easy to set-up and customize.</li>
-	<li>Supports unlimited nested sub-menus.</li>
-	<li>Fast and lightweight (jQuery plug-in *only 6.3 kB)</li>
+  <li>Extensible HTML/CSS interface.</li>
+  <li>Compatible with Firefox 3.6+, Chrome, Safari 5+, Opera, and Internet Explorer 7+ web browsers.</li>
+  <li>Compatible with iOS and Android mobile web browsers.</li>
+  <li>Fully responsive layout with touch event support.</li>
+  <li>Easy to set-up and customize.</li>
+  <li>Supports unlimited nested sub-menus.</li>
+  <li>Fast and lightweight (jQuery plug-in *only 6.3 kB)</li>
 </ul>
 
 <p>Check out the <a href="demo.html">demo</a> provided with this package.</p>
@@ -40,24 +40,24 @@
 <p>Manual install:</p>
 
 <ol>
-	<li>Download the latest <a href="https://github.com/nuxy/EZ-Menu/tags">sources</a> to your computer using a web browser.</li>
-	<li>Extract the contents of the <em>.zip</em> into a folder on your local computer.</li>
-	<li>Upload the folder with the <strong>following files</strong> to your web site.</li>
+  <li>Download the latest <a href="https://github.com/nuxy/EZ-Menu/tags">sources</a> to your computer using a web browser.</li>
+  <li>Extract the contents of the <em>.zip</em> into a folder on your local computer.</li>
+  <li>Upload the folder with the <strong>following files</strong> to your web site.</li>
 </ol>
 
 <table border="1">
-	<tr>
-		<th>Filename</th>
-		<th>Role</th>
-	</tr>
-	<tr>
-		<td>ez-menu.min.js</td>
-		<td>The main script to be included from within your HTML document.</td>
-	</tr>
-	<tr>
-		<td>ez-menu.min.css</td>
-		<td>This style sheet that defines the "look & feel" of the menu bar and sub-menus</td>
-	</tr>
+  <tr>
+    <th>Filename</th>
+    <th>Role</th>
+  </tr>
+  <tr>
+    <td>ez-menu.min.js</td>
+    <td>The main script to be included from within your HTML document.</td>
+  </tr>
+  <tr>
+    <td>ez-menu.min.css</td>
+    <td>This style sheet that defines the "look & feel" of the menu bar and sub-menus</td>
+  </tr>
 </table>
 
 <h2>Set-up</h2>
@@ -74,20 +74,20 @@
 
 &lt;script src="/path/to/ez-menu.min.js"&gt;&lt;/script&gt;
 $(document).ready(function() {
-	$('#container')
-		.EZMenu([
-			{ "name": "Menu Link 1", "url": "http://menu1.domain.com", "target": "_blank" },
-			{ "name": "Menu Link 2", "url": "http://menu2.domain.com", "target": "_blank" },
-			{ "name": "Menu List A", "options": [
-				{ "name": "Item 1A", "url": "http://item1A.domain.com" },
-				{ "name": "Item 2A", "url": "http://item2A.domain.com" },
-				{ "name": "Menu List B", "options": [
-					{ "name": "Item 1B", "url": "http://item1B.domain.com" },
-					{ "name": "Item 2B", "url": "http://item2B.domain.com",
-						"classname": "custom_link" }
-				]}
-			]}
-		]);
+  $('#container')
+    .EZMenu([
+      { "name": "Menu Link 1", "url": "http://menu1.domain.com", "target": "_blank" },
+      { "name": "Menu Link 2", "url": "http://menu2.domain.com", "target": "_blank" },
+      { "name": "Menu List A", "options": [
+        { "name": "Item 1A", "url": "http://item1A.domain.com" },
+        { "name": "Item 2A", "url": "http://item2A.domain.com" },
+        { "name": "Menu List B", "options": [
+          { "name": "Item 1B", "url": "http://item1B.domain.com" },
+          { "name": "Item 2B", "url": "http://item2B.domain.com",
+            "classname": "custom_link" }
+        ]}
+      ]}
+    ]);
 });
 &lt;/script&gt;
 
@@ -100,41 +100,41 @@ $(document).ready(function() {
 <a name="settings"></a>
 
 <table border="1">
-	<tr>
-		<th>Option</th>
-		<th>Description</th>
-		<th>Default Value</th>
-	</tr>
-	<tr>
-		<td>showEasing</td>
-		<td>animation to be used when opening sub-menus content</td>
-		<td>linear</td>
-	</tr>
-	<tr>
-		<td>hideEasing</td>
-		<td>animation to be used when opening sub-menus content</td>
-		<td>linear</td>
-	</tr>
-	<tr>
-		<td>showSpeed</td>
-		<td>speed of the sub-menu animation in milliseconds</td>
-		<td>300</td>
-	</tr>
-	<tr>
-		<td>hideSpeed</td>
-		<td>speed of the sub-menu animation in milliseconds</td>
-		<td>300</td>
-	</tr>
-	<tr>
-		<td>click2open</td>
-		<td>open submenus on clickable event (default hover)</td>
-		<td>false</td>
-	</tr>
-	<tr>
-		<td>responsive</td>
-		<td>enabled responsive layout on supported mobile devices</td>
-		<td>false</td>
-	</tr>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Default Value</th>
+  </tr>
+  <tr>
+    <td>showEasing</td>
+    <td>animation to be used when opening sub-menus content</td>
+    <td>linear</td>
+  </tr>
+  <tr>
+    <td>hideEasing</td>
+    <td>animation to be used when opening sub-menus content</td>
+    <td>linear</td>
+  </tr>
+  <tr>
+    <td>showSpeed</td>
+    <td>speed of the sub-menu animation in milliseconds</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>hideSpeed</td>
+    <td>speed of the sub-menu animation in milliseconds</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>click2open</td>
+    <td>open submenus on clickable event (default hover)</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>responsive</td>
+    <td>enabled responsive layout on supported mobile devices</td>
+    <td>false</td>
+  </tr>
 </table>
 
 <p>Click <a href="http://jqueryui.com/easing">here</a> for more information about the available jQuery UI Easing effects.</p>
@@ -144,9 +144,9 @@ $(document).ready(function() {
 <p>This can be easily achieved using optional <em>classname</em> in the menu JSON configuration.  The following code corresponds to the <a href="#example">example</a> provided above.</p>
 
 <pre>$('a.custom_link').on('click', function(event) {
-	event.preventDefault();
+  event.preventDefault();
 
-	// do something
+  // do something
 });
 </pre>
 

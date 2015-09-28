@@ -11,190 +11,190 @@
  */
 
 ul.ez_menu {
-	border: 1px solid #DDDDDD;
-	cursor: pointer;
-	height: 34px;
-	left: 0px;
-	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
-	position: fixed;
-	top: 0px;
-	width: auto;
+  border: 1px solid #DDDDDD;
+  cursor: pointer;
+  height: 34px;
+  left: 0px;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 0px;
+  width: auto;
 }
 
 ul.ez_menu ul.menu_list {
-	background-color: #FFFFFF;
-	border: 1px solid #DDDDDD;
-	border-top: none;
-	display: none;
-	left: -1px;
-	list-style-type: none;
-	padding: 0px;
-	position: absolute;
-	top: 34px;
-	white-space: nowrap;
-	min-width: 150px;
-	z-index: 10;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-top: none;
+  display: none;
+  left: -1px;
+  list-style-type: none;
+  padding: 0px;
+  position: absolute;
+  top: 34px;
+  white-space: nowrap;
+  min-width: 150px;
+  z-index: 10;
 }
 
 ul.ez_menu ul.menu_list li {
-	border: none;
-	font-weight: normal;
-	padding: 0px;
-	width: 100%;
+  border: none;
+  font-weight: normal;
+  padding: 0px;
+  width: 100%;
 }
 
 ul.ez_menu ul.menu_list li:hover {
-	background-color: #F5F5F5;
-	text-decoration: none;
+  background-color: #F5F5F5;
+  text-decoration: none;
 }
 
 ul.ez_menu li {
-	float: left;
-	font-weight: bold;
-	padding: 8px 20px 6px 12px;
-	position: relative;
+  float: left;
+  font-weight: bold;
+  padding: 8px 20px 6px 12px;
+  position: relative;
 }
 
 ul.ez_menu li a {
-	display: block;
+  display: block;
 }
 
 ul.ez_menu li a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 ul.ez_menu li.menu_hover_on {
-	background-color: #EEEEEE;
-	height: 20px;
+  background-color: #EEEEEE;
+  height: 20px;
 }
 
 ul.ez_menu li.menu_hover_off {
-	height: 20px;
+  height: 20px;
 }
 
 ul.ez_menu li.submenu_hover_on,
 ul.ez_menu li.submenu_hover_off {
-	font-weight: bold;
-	padding-right: 20px;
+  font-weight: bold;
+  padding-right: 20px;
 }
 
 ul.ez_menu li.submenu_hover_on {
-	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center;
+  background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center;
 }
 
 ul.ez_menu li.submenu_hover_on a {
-	color: #000000;
+  color: #000000;
 }
 
 ul.ez_menu li.submenu_hover_on > ul.menu_list li a {
-	color: #787878;
-	display: block;
-	height: 16px;
-	padding: 4px 10px 6px 10px;
-	width: auto;
+  color: #787878;
+  display: block;
+  height: 16px;
+  padding: 4px 10px 6px 10px;
+  width: auto;
 }
 
 ul.ez_menu li.submenu_hover_off {
-	background: none;
+  background: none;
 }
 
 ul.ez_menu * li.submenu {
-	background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right center !important;
-	border-top: 1px dashed #EEEEEE !important;
+  background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right center !important;
+  border-top: 1px dashed #EEEEEE !important;
 }
 
 ul.ez_menu * li.submenu:hover {
-	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center !important;
+  background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center !important;
 }
 
 ul.ez_menu * li.submenu:first-child {
-	border-top: none !important;
+  border-top: none !important;
 }
 
 ul.ez_menu * li.submenu ul.menu_list {
-	border-top: 1px solid #EEEEEE;
-	left: 100%;
-	top: 0px;
+  border-top: 1px solid #EEEEEE;
+  left: 100%;
+  top: 0px;
 }
 
 /* responsive (mobile devices) */
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
-	ul.ez_menu.media {
-		background-color: none; 	 	
-		border: 0px;
-		height: auto;
-		overflow: hidden;
-	}
+  ul.ez_menu.media {
+    background-color: none;
+    border: 0px;
+    height: auto;
+    overflow: hidden;
+  }
 
-	ul.ez_menu.media ul.menu_list {
-		background-color: none;
-		border: 0px;
-		left: auto;
-		margin: 0px;
-		padding: 0px;
-		padding-right: 20px;
-		position: relative;
-		top: auto;
-		white-space: normal;
-		width: 100% !important;
-	}
+  ul.ez_menu.media ul.menu_list {
+    background-color: none;
+    border: 0px;
+    left: auto;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 20px;
+    position: relative;
+    top: auto;
+    white-space: normal;
+    width: 100% !important;
+  }
 
-	ul.ez_menu.media ul.menu_list li {
-		list-style-type: square;
-		margin: 0px;
-		position: relative;
-	}
+  ul.ez_menu.media ul.menu_list li {
+    list-style-type: square;
+    margin: 0px;
+    position: relative;
+  }
 
-	ul.ez_menu.media ul.menu_list li:hover {
-		background-color: none;
-	}
+  ul.ez_menu.media ul.menu_list li:hover {
+    background-color: none;
+  }
 
-	ul.ez_menu.media > li > a {
-		background-color: #CCCCCC;
-		border-bottom: 1px solid #DDDDDD;
-		padding: 8px 20px 6px 12px;
-	}
+  ul.ez_menu.media > li > a {
+    background-color: #CCCCCC;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 8px 20px 6px 12px;
+  }
 
-	ul.ez_menu.media li {
-		background-color: none !important;
-		float: none;
-		padding: 0px;
-	}
+  ul.ez_menu.media li {
+    background-color: none !important;
+    float: none;
+    padding: 0px;
+  }
 
-	ul.ez_menu.media li.menu_hover_on,
-	ul.ez_menu.media li.menu_hover_off {
-		height: auto;
-	}
+  ul.ez_menu.media li.menu_hover_on,
+  ul.ez_menu.media li.menu_hover_off {
+    height: auto;
+  }
 
-	ul.ez_menu.media li.submenu_hover_on,
-	ul.ez_menu.media li.submenu_hover_off {
-		padding-right: 0px;
-	}
+  ul.ez_menu.media li.submenu_hover_on,
+  ul.ez_menu.media li.submenu_hover_off {
+    padding-right: 0px;
+  }
 
-	ul.ez_menu.media li.submenu_hover_on {
-		background: #CCCCCC url( images/arrow_asc.gif ) no-repeat right 10px;
-	}
+  ul.ez_menu.media li.submenu_hover_on {
+    background: #CCCCCC url( images/arrow_asc.gif ) no-repeat right 10px;
+  }
 
-	ul.ez_menu.media li.submenu_hover_on > ul.menu_list li a {
-		padding: auto;
-	}
+  ul.ez_menu.media li.submenu_hover_on > ul.menu_list li a {
+    padding: auto;
+  }
 
-	ul.ez_menu.media * li.submenu {
-		background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right 10px !important;
-		font-weight: bold;
-	}
+  ul.ez_menu.media * li.submenu {
+    background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right 10px !important;
+    font-weight: bold;
+  }
 
-	ul.ez_menu.media * li.submenu:hover {
-		background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right 10px !important;
-		font-weight: bold;
-	}
+  ul.ez_menu.media * li.submenu:hover {
+    background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right 10px !important;
+    font-weight: bold;
+  }
 
-	ul.ez_menu.media * li.submenu ul.menu_list {
-		border-top: 0px;
-		left: 0px;
-		top: 0px;
-	}
+  ul.ez_menu.media * li.submenu ul.menu_list {
+    border-top: 0px;
+    left: 0px;
+    top: 0px;
+  }
 }

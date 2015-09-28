@@ -1,110 +1,110 @@
 /* example */
 
 #container ul.ez_menu {
-	width: auto;
+  width: auto;
 }
 
 #container ul.ez_menu {
-	position: relative;
+  position: relative;
 }
 
 /* customize */
 
 ul.ez_menu {
-	background-color: #DDDDDD;
-	border: 1px solid #DDDDDD;
-	height: 34px;
-	width: 100%;
+  background-color: #DDDDDD;
+  border: 1px solid #DDDDDD;
+  height: 34px;
+  width: 100%;
 }
 
 ul.ez_menu ul.menu_list {
-	background-color: #FFFFFF;
-	width: 150px;
+  background-color: #FFFFFF;
+  width: 150px;
 }
 
 ul.ez_menu ul.menu_list li {
-	font-weight: normal;
+  font-weight: normal;
 }
 
 ul.ez_menu ul.menu_list li:active {
-	background-color: #F5F5F5;
+  background-color: #F5F5F5;
 }
 
 ul.ez_menu ul.menu_list li:hover {
-	background-color: #F5F5F5;
-	text-decoration: none;
+  background-color: #F5F5F5;
+  text-decoration: none;
 }
 
 ul.ez_menu li {
-	float: left;
-	font-weight: bold;
-	padding: 8px 20px 6px 12px;
-	position: relative;
+  float: left;
+  font-weight: bold;
+  padding: 8px 20px 6px 12px;
+  position: relative;
 }
 
 ul.ez_menu li a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 ul.ez_menu li.menu_hover_on {
-	background-color: #EEEEEE;
+  background-color: #EEEEEE;
 }
 
 ul.ez_menu li.submenu_hover_on {
-	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center;
+  background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center;
 }
 
 ul.ez_menu li.submenu_hover_on a {
-	color: #000000;
+  color: #000000;
 }
 
 ul.ez_menu li.submenu_hover_on > ul.menu_list li a {
-	height: 16px;
-	padding: 4px 10px 6px 10px;
+  height: 16px;
+  padding: 4px 10px 6px 10px;
 }
 
 ul.ez_menu li.submenu_hover_off {
-	background: none;
+  background: none;
 }
 
 ul.ez_menu * li.submenu {
-	background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right center !important;
-	border-top: 1px dashed #EEEEEE !important;
+  background: #FFFFFF url( images/arrow_rgt.gif ) no-repeat right center !important;
+  border-top: 1px dashed #EEEEEE !important;
 }
 
 ul.ez_menu * li.submenu:hover {
-	background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center !important;
+  background: #FFFFFF url( images/arrow_asc.gif ) no-repeat right center !important;
 }
 
 ul.ez_menu * li.submenu ul.menu_list {
-	border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #EEEEEE;
 }
 
 /* responsive (mobile devices) */
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
-	#about {
-		box-shadow: none;
-	}
+  #about {
+    box-shadow: none;
+  }
 
-	#container ul.ez_menu.media {
-		margin: 0px;
-		width: auto !important;
-	}
+  #container ul.ez_menu.media {
+    margin: 0px;
+    width: auto !important;
+  }
 
-	#container ul.ez_menu.media * li.submenu > a {
-		color: #787878 !important;
-	}
+  #container ul.ez_menu.media * li.submenu > a {
+    color: #787878 !important;
+  }
 
-	#footer {
-		padding: 0px;
-		padding-bottom: 10px;
-		text-align: center;	
-		width: 100%;
-	}
+  #footer {
+    padding: 0px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
 
-	#footer span.copy {
-		float: none;
-		right: 0px;
-	}
+  #footer span.copy {
+    float: none;
+    right: 0px;
+  }
 }
