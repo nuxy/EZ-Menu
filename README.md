@@ -2,7 +2,7 @@
 
 Create a HTML navigation menu and sub-menus from JSON with ease.
 
-[<img src="https://github.com/nuxy/EZ-Menu/raw/master/preview.png" alt="EZ-Menu" />](https://labs.mbrooks.info/demos/EZ-Menu)
+[<img src="https://nuxy.github.io/EZ-Menu/preview.png" alt="EZ-Menu" />](https://nuxy.github.io/EZ-Menu)
 
 ## Features
 
@@ -20,7 +20,7 @@ This package can be easily installed using [Bower](http://bower.io).
 
     $ bower install ez-menu
 
-Please refer to the [README](https://labs.mbrooks.info/demos/EZ-Menu/README.html) for more information about this package.
+Please refer to the [README](https://nuxy.github.io/EZ-Menu) for more information about this package.
 
 ## License and Warranty
 
